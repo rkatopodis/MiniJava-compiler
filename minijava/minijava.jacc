@@ -32,15 +32,37 @@ import minijava.ast.*;
 /* TODO: classes de prioridade */
 
 %%
+prog : main classes { saida = new Prog($1, $2); $$ = saida; }
+     ;
 
-prog : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'
-       classes { saida = new Prog($2.texto, $12.texto, $15, $18); $$ = saida; }
-     ; 
+main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}' { $$ = new ast.Main($2.texto, $12.texto, $15); }
+     ;
 
-classes : classes classe   { $1.add($2); $$ = $1; }
-        |                  { $$ = new java.util.ArrayList<Classe>(); }
+classes : classes classe { $1.add(0, $2); $$ = $1; }
+        | {$$ = new java.util.ArrayList<Classe>(); }
         ;
 
+classe : CLASS ID EXTENDS ID '{' vars metodos '}' { $$ = new ast.Classe($2.texto, $4.texto, $5, $6); }
+       | CLASS ID '{' vars metodos '}' { $$ = new ast.Classe($2.texto, $5, $6); }
+       ;
+
+vars : vars var   { $1.add($2); $$ = $1; }
+     |            { $$ = new java.util.ArrayList<Var>(); }
+     ;
+
+var : tipo ID ';'  { $$ = new Var($1, $2.texto, $2.lin); }
+    ;
+
+metodos : metodos metodo { $1.add(0, $2); $$ = $1 }
+        |                { $$ = new java.util.ArrayList<Metodo>(); }
+        ;
+
+metodo : PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp ';' '}'
+         { $$ = new ast.Metodo($2, $3.texto, new java.util.ArrayList<Param>(), $7, $8, $10); }
+       | PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp ';' '}'
+         { $$ = new ast.Metodo($2, $3.texto, $5, $8, $9, $11); }
+       ;
+// Exemplos
 /* TODO: não-terminal classe, gera nó Classe da AST, regra CLASSE na gramática */
 
 vars : vars var   { $1.add($2); $$ = $1; }
@@ -48,7 +70,7 @@ vars : vars var   { $1.add($2); $$ = $1; }
      ;
 
 var : tipo ID ';'  { $$ = new Var($1, $2.texto, $2.lin); }
-    ; 
+    ;
 
 /* TODO: não-terminal metodos, lista de 0 ou mais métodos, regra {METODO} */
 
@@ -69,7 +91,7 @@ tipo : INT '[' ']'  { $$ = "int[]"; }
      | ID           { $$ = $1.texto; }
      ;
 
-cmds : cmd cmds  { $2.add(0, $1); $$ = $2; } 
+cmds : cmd cmds  { $2.add(0, $1); $$ = $2; }
      |           { $$ = new java.util.ArrayList<Cmd>(); }
      ;
 
@@ -110,8 +132,8 @@ exps : exps ',' exp   { $1.add($3); $$ = $1; }
      | exp            { java.util.List<Exp> l = new java.util.ArrayList<Exp>();
                         l.add($1); $$ = l; }
      ;
-     
-     
+
+
 %%
 
 Scanner scan;
