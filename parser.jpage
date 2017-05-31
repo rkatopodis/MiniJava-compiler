@@ -1,0 +1,71 @@
+
+Análise Sintática de MiniJava
+=============================
+
+Esreva um analisador sintático para
+a linguagem MiniJava (http://www.dcc.ufrj.br/~fabiom/comp/minijava.html).
+Para facilitar, a pasta `minijava` contém o esqueleto de um analisador
+escrito usando o JACC (http://web.cecs.pdx.edu/~mpj/jacc/) que vocês podem apenas
+completar e testar. O esqueleto está no arquivo `minijava.jacc`. O
+próprio JACC também está incluso, e consiste nos arquivos `jacc.bat`
+e `jacc.jar`. Comentários `TODO` no esqueleto marcam os pontos que devem ser
+completados.
+
+A parte de expressões da gramática está quase completa; estão
+faltando as classes de prioridade para poder eliminar os conflitos
+shift-reduce que irão aparecer. A gramática de MiniJava que está
+na página codifica as classes de precedência diretamente na gramática,
+vocês terão que entender e reinterpretar isso para classes de precedência.
+Lembre que MiniJava é uma linguagem com a ambiguidade do if-else.
+
+A análise sintática deve gerar uma árvore sintática abstrata
+para o programa, usando as classes que estão no pacote `minijava.ast`.
+Depois de analisar o programa usando o método `parse`, a AST do
+programa (uma instância de Prog) fica no campo `saida` do parser.
+O método toString de de Prog reproduz o código fonte do programa,
+a menos de espaços em branco e comentários.
+
+Abaixo estão trechos de código que executam o analisador em
+alguns casos de teste:
+
+/* Primeiro modifique Parser.java para a classe Parser ser pública */
+java.io.FileReader f = new java.io.FileReader("factorial.java");
+minijava.Parser parser = new minijava.Parser(f);
+parser.parse();
+String saida = parser.saida.toString();
+java.io.StringReader sr = new java.io.StringReader(saida);
+parser = new minijava.Parser(sr);
+parser.parse();
+String saida2 = parser.saida.toString();
+System.out.println(saida.equals(saida2));
+
+java.io.FileReader f = new java.io.FileReader("binarysearch.java");
+minijava.Parser parser = new minijava.Parser(f);
+parser.parse();
+String saida = parser.saida.toString();
+java.io.StringReader sr = new java.io.StringReader(saida);
+parser = new minijava.Parser(sr);
+parser.parse();
+String saida2 = parser.saida.toString();
+System.out.println(saida.equals(saida2));
+
+java.io.FileReader f = new java.io.FileReader("bubblesort.java");
+minijava.Parser parser = new minijava.Parser(f);
+parser.parse();
+String saida = parser.saida.toString();
+java.io.StringReader sr = new java.io.StringReader(saida);
+parser = new minijava.Parser(sr);
+parser.parse();
+String saida2 = parser.saida.toString();
+System.out.println(saida.equals(saida2));
+
+java.io.FileReader f = new java.io.FileReader("treevisitor.java");
+minijava.Parser parser = new minijava.Parser(f);
+parser.parse();
+String saida = parser.saida.toString();
+java.io.StringReader sr = new java.io.StringReader(saida);
+parser = new minijava.Parser(sr);
+parser.parse();
+String saida2 = parser.saida.toString();
+System.out.println(saida.equals(saida2));
+
