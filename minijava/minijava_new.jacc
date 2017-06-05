@@ -1,6 +1,6 @@
 %package minijava
 %class Parser
-%interface TokensNew
+%interface Tokens
 
 %{
     import minijava.ast.*;
@@ -32,12 +32,12 @@
 %left '<' EQUALS NEQUALS
 %left '+' '-'
 %left '*' '/'
-%left NEG
+%left neg
 
 %right NEW
 %right '!'
 
-%nonassoc NOELSE
+%nonassoc noelse
 %nonassoc ELSE
 
 %%
@@ -83,7 +83,7 @@ tipo : INT '[' ']'  { $$ = "int[]"; }
      ;
 
 cmd : '{' cmds '}'                         { $$ = new Bloco($2); }
-    | IF '(' exp ')' cmd %prec NOELSE      { $$ = new If($3, $5, $1.lin); }
+    | IF '(' exp ')' cmd %prec noelse      { $$ = new If($3, $5, $1.lin); }
     | IF '(' exp ')' cmd ELSE cmd          { $$ = new If($3, $5, $7, $1.lin); }
     | WHILE '(' exp ')' cmd                { $$ = new While($3, $5, $1.lin); }
     | PRINTLN '(' exp ')' ';'              { $$ = new Println($3, $1.lin); }
@@ -103,7 +103,7 @@ exp : exp '+' exp  { $$ = new Soma($1, $3, $2.lin); }
     | exp EQUALS exp   { $$ = new Igual($1, $3, $2.lin); }
     | exp NEQUALS exp  { $$ = new Dif($1, $3, $2.lin); }
     | exp AND exp  { $$ = new ELog($1, $3, $2.lin); }
-    | '-' exp %prec NEG { $$ = new Neg($2, $1.lin); }
+    | '-' exp %prec neg { $$ = new Neg($2, $1.lin); }
     | '!' exp      { $$ = new Nao($2, $1.lin); }
     | TRUE         { $$ = new True(); }
     | FALSE        { $$ = new False(); }

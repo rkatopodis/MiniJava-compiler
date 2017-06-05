@@ -1,265 +1,650 @@
-class TreeVisitor {
-  public static void main(String[] a) {
-System.out.println(new TV().Start());
-  }
-}
-class TV extends Object{
-public int Start() {
-Tree root;
-boolean ntb;
-int nti;
-MyVisitor v;
-root = new Tree();
-ntb = root.Init(16);
-ntb = root.Print();
-System.out.println(100000000);
-ntb = root.Insert(8);
-ntb = root.Insert(24);
-ntb = root.Insert(4);
-ntb = root.Insert(12);
-ntb = root.Insert(20);
-ntb = root.Insert(28);
-ntb = root.Insert(14);
-ntb = root.Print();
-System.out.println(100000000);
-v = new MyVisitor();
-System.out.println(50000000);
-nti = root.accept(v);
-System.out.println(100000000);
-System.out.println(root.Search(24));
-System.out.println(root.Search(12));
-System.out.println(root.Search(16));
-System.out.println(root.Search(50));
-System.out.println(root.Search(12));
-ntb = root.Delete(12);
-ntb = root.Print();
-System.out.println(root.Search(12));
-return 0;
-}
-}
-class Tree extends Object{
-Tree left;
-Tree right;
-int key;
-boolean has_left;
-boolean has_right;
-Tree my_null;
-public boolean Init(int v_key) {
-key = v_key;
-has_left = false;
-has_right = false;
-return true;
-}
-public boolean SetRight(Tree rn) {
-right = rn;
-return true;
-}
-public boolean SetLeft(Tree ln) {
-left = ln;
-return true;
-}
-public Tree GetRight() {
-return right;
-}
-public Tree GetLeft() {
-return left;
-}
-public int GetKey() {
-return key;
-}
-public boolean SetKey(int v_key) {
-key = v_key;
-return true;
-}
-public boolean GetHas_Right() {
-return has_right;
-}
-public boolean GetHas_Left() {
-return has_left;
-}
-public boolean SetHas_Left(boolean val) {
-has_left = val;
-return true;
-}
-public boolean SetHas_Right(boolean val) {
-has_right = val;
-return true;
-}
-public boolean Compare(int num1, int num2) {
-boolean ntb;
-int nti;
-ntb = false;
-nti = (num2 + 1);
-if((num1 < num2)) ntb = false; else if((!(num1 < nti))) ntb = false; else ntb = true;
-return ntb;
-}
-public boolean Insert(int v_key) {
-Tree new_node;
-boolean ntb;
-Tree current_node;
-boolean cont;
-int key_aux;
-new_node = new Tree();
-ntb = new_node.Init(v_key);
-current_node = this;
-cont = true;
-while(cont) {
- key_aux = current_node.GetKey();
-if((v_key < key_aux)) {
- if(current_node.GetHas_Left()) current_node = current_node.GetLeft(); else {
- cont = false;
-ntb = current_node.SetHas_Left(true);
-ntb = current_node.SetLeft(new_node);
-}
-} else {
- if(current_node.GetHas_Right()) current_node = current_node.GetRight(); else {
- cont = false;
-ntb = current_node.SetHas_Right(true);
-ntb = current_node.SetRight(new_node);
-}
-}
-}
-return true;
-}
-public boolean Delete(int v_key) {
-Tree current_node;
-Tree parent_node;
-boolean cont;
-boolean found;
-boolean ntb;
-boolean is_root;
-int key_aux;
-current_node = this;
-parent_node = this;
-cont = true;
-found = false;
-is_root = true;
-while(cont) {
- key_aux = current_node.GetKey();
-if((v_key < key_aux)) if(current_node.GetHas_Left()) {
- parent_node = current_node;
-current_node = current_node.GetLeft();
-} else cont = false; else if((key_aux < v_key)) if(current_node.GetHas_Right()) {
- parent_node = current_node;
-current_node = current_node.GetRight();
-} else cont = false; else {
- if(is_root) if(((!current_node.GetHas_Right()) && (!current_node.GetHas_Left()))) ntb = true; else ntb = this.Remove(parent_node, current_node); else ntb = this.Remove(parent_node, current_node);
-found = true;
-cont = false;
-}
-is_root = false;
-}
-return found;
-}
-public boolean Remove(Tree p_node, Tree c_node) {
-boolean ntb;
-int auxkey1;
-int auxkey2;
-if(c_node.GetHas_Left()) ntb = this.RemoveLeft(p_node, c_node); else if(c_node.GetHas_Right()) ntb = this.RemoveRight(p_node, c_node); else {
- auxkey1 = c_node.GetKey();
-auxkey2 = p_node.GetLeft().GetKey();
-if(this.Compare(auxkey1, auxkey2)) {
- ntb = p_node.SetLeft(my_null);
-ntb = p_node.SetHas_Left(false);
-} else {
- ntb = p_node.SetRight(my_null);
-ntb = p_node.SetHas_Right(false);
-}
-}
-return true;
-}
-public boolean RemoveRight(Tree p_node, Tree c_node) {
-boolean ntb;
-while(c_node.GetHas_Right()) {
- ntb = c_node.SetKey(c_node.GetRight().GetKey());
-p_node = c_node;
-c_node = c_node.GetRight();
-}
-ntb = p_node.SetRight(my_null);
-ntb = p_node.SetHas_Right(false);
-return true;
-}
-public boolean RemoveLeft(Tree p_node, Tree c_node) {
-boolean ntb;
-while(c_node.GetHas_Left()) {
- ntb = c_node.SetKey(c_node.GetLeft().GetKey());
-p_node = c_node;
-c_node = c_node.GetLeft();
-}
-ntb = p_node.SetLeft(my_null);
-ntb = p_node.SetHas_Left(false);
-return true;
-}
-public int Search(int v_key) {
-Tree current_node;
-int ifound;
-boolean cont;
-int key_aux;
-current_node = this;
-cont = true;
-ifound = 0;
-while(cont) {
- key_aux = current_node.GetKey();
-if((v_key < key_aux)) if(current_node.GetHas_Left()) current_node = current_node.GetLeft(); else cont = false; else if((key_aux < v_key)) if(current_node.GetHas_Right()) current_node = current_node.GetRight(); else cont = false; else {
- ifound = 1;
-cont = false;
-}
-}
-return ifound;
-}
-public boolean Print() {
-boolean ntb;
-Tree current_node;
-current_node = this;
-ntb = this.RecPrint(current_node);
-return true;
-}
-public boolean RecPrint(Tree node) {
-boolean ntb;
-if(node.GetHas_Left()) {
- ntb = this.RecPrint(node.GetLeft());
-} else ntb = true;
-System.out.println(node.GetKey());
-if(node.GetHas_Right()) {
- ntb = this.RecPrint(node.GetRight());
-} else ntb = true;
-return true;
-}
-public int accept(Visitor v) {
-int nti;
-System.out.println(333);
-nti = v.visit(this);
-return 0;
-}
-}
-class Visitor extends Object{
-Tree l;
-Tree r;
-public int visit(Tree n) {
-int nti;
-if(n.GetHas_Right()) {
- r = n.GetRight();
-nti = r.accept(this);
-} else nti = 0;
-if(n.GetHas_Left()) {
- l = n.GetLeft();
-nti = l.accept(this);
-} else nti = 0;
-return 0;
-}
-}
-class MyVisitor extends Visitor{
-public int visit(Tree n) {
-int nti;
-if(n.GetHas_Right()) {
- r = n.GetRight();
-nti = r.accept(this);
-} else nti = 0;
-System.out.println(n.GetKey());
-if(n.GetHas_Left()) {
- l = n.GetLeft();
-nti = l.accept(this);
-} else nti = 0;
-return 0;
-}
-}
+(class,1,1)
+(id,BinarySearch,1,7)
+({,1,19)
+(public,2,5)
+(static,2,12)
+(void,2,19)
+(main,2,24)
+((,2,28)
+(String,2,29)
+([,2,35)
+(],2,36)
+(id,a,2,38)
+(),2,39)
+({,2,40)
+(System.out.println,3,2)
+((,3,20)
+(new,3,21)
+(id,BS,3,25)
+((,3,27)
+(),3,28)
+(.,3,29)
+(id,Start,3,30)
+((,3,35)
+(num,20,3,36)
+(),3,38)
+(),3,39)
+(;,3,40)
+(},4,5)
+(},5,1)
+(class,10,1)
+(id,BS,10,7)
+({,10,9)
+(int,11,5)
+([,11,8)
+(],11,9)
+(id,number,11,11)
+(;,11,18)
+(int,12,5)
+(id,size,12,9)
+(;,12,14)
+(public,16,5)
+(int,16,12)
+(id,Start,16,16)
+((,16,21)
+(int,16,22)
+(id,sz,16,26)
+(),16,28)
+({,16,29)
+(int,17,2)
+(id,aux01,17,6)
+(;,17,12)
+(int,18,2)
+(id,aux02,18,6)
+(;,18,12)
+(id,aux01,19,2)
+(=,19,8)
+(this,19,10)
+(.,19,14)
+(id,Init,19,15)
+((,19,19)
+(id,sz,19,20)
+(),19,22)
+(;,19,23)
+(id,aux02,20,2)
+(=,20,8)
+(this,20,10)
+(.,20,14)
+(id,Print,20,15)
+((,20,20)
+(),20,21)
+(;,20,22)
+(if,21,2)
+((,21,5)
+(this,21,6)
+(.,21,10)
+(id,Search,21,11)
+((,21,17)
+(num,8,21,18)
+(),21,19)
+(),21,20)
+(System.out.println,21,22)
+((,21,40)
+(num,1,21,41)
+(),21,42)
+(;,21,44)
+(else,22,2)
+(System.out.println,22,7)
+((,22,25)
+(num,0,22,26)
+(),22,27)
+(;,22,29)
+(if,23,2)
+((,23,5)
+(this,23,6)
+(.,23,10)
+(id,Search,23,11)
+((,23,17)
+(num,19,23,18)
+(),23,20)
+(),23,21)
+(System.out.println,23,23)
+((,23,41)
+(num,1,23,42)
+(),23,43)
+(;,23,45)
+(else,24,2)
+(System.out.println,24,7)
+((,24,25)
+(num,0,24,26)
+(),24,27)
+(;,24,29)
+(if,25,2)
+((,25,5)
+(this,25,6)
+(.,25,10)
+(id,Search,25,11)
+((,25,17)
+(num,20,25,18)
+(),25,20)
+(),25,21)
+(System.out.println,25,23)
+((,25,41)
+(num,1,25,42)
+(),25,43)
+(;,25,45)
+(else,26,2)
+(System.out.println,26,7)
+((,26,25)
+(num,0,26,26)
+(),26,27)
+(;,26,29)
+(if,27,2)
+((,27,5)
+(this,27,6)
+(.,27,10)
+(id,Search,27,11)
+((,27,17)
+(num,21,27,18)
+(),27,20)
+(),27,21)
+(System.out.println,27,23)
+((,27,41)
+(num,1,27,42)
+(),27,43)
+(;,27,45)
+(else,28,2)
+(System.out.println,28,7)
+((,28,25)
+(num,0,28,26)
+(),28,27)
+(;,28,29)
+(if,29,2)
+((,29,5)
+(this,29,6)
+(.,29,10)
+(id,Search,29,11)
+((,29,17)
+(num,37,29,18)
+(),29,20)
+(),29,21)
+(System.out.println,29,23)
+((,29,41)
+(num,1,29,42)
+(),29,43)
+(;,29,45)
+(else,30,2)
+(System.out.println,30,7)
+((,30,25)
+(num,0,30,26)
+(),30,27)
+(;,30,29)
+(if,31,2)
+((,31,5)
+(this,31,6)
+(.,31,10)
+(id,Search,31,11)
+((,31,17)
+(num,38,31,18)
+(),31,20)
+(),31,21)
+(System.out.println,31,23)
+((,31,41)
+(num,1,31,42)
+(),31,43)
+(;,31,45)
+(else,32,2)
+(System.out.println,32,7)
+((,32,25)
+(num,0,32,26)
+(),32,27)
+(;,32,29)
+(if,33,2)
+((,33,5)
+(this,33,6)
+(.,33,10)
+(id,Search,33,11)
+((,33,17)
+(num,39,33,18)
+(),33,20)
+(),33,21)
+(System.out.println,33,23)
+((,33,41)
+(num,1,33,42)
+(),33,43)
+(;,33,45)
+(else,34,2)
+(System.out.println,34,7)
+((,34,25)
+(num,0,34,26)
+(),34,27)
+(;,34,29)
+(if,35,2)
+((,35,5)
+(this,35,6)
+(.,35,10)
+(id,Search,35,11)
+((,35,17)
+(num,50,35,18)
+(),35,20)
+(),35,21)
+(System.out.println,35,23)
+((,35,41)
+(num,1,35,42)
+(),35,43)
+(;,35,45)
+(else,36,2)
+(System.out.println,36,7)
+((,36,25)
+(num,0,36,26)
+(),36,27)
+(;,36,29)
+(return,38,2)
+(num,999,38,9)
+(;,38,13)
+(},39,5)
+(public,44,5)
+(boolean,44,12)
+(id,Search,44,20)
+((,44,26)
+(int,44,27)
+(id,num,44,31)
+(),44,34)
+({,44,35)
+(boolean,45,2)
+(id,bs01,45,10)
+(;,45,15)
+(int,46,2)
+(id,right,46,6)
+(;,46,12)
+(int,47,2)
+(id,left,47,6)
+(;,47,11)
+(boolean,48,2)
+(id,var_cont,48,10)
+(;,48,19)
+(int,49,2)
+(id,medium,49,6)
+(;,49,13)
+(int,50,2)
+(id,aux01,50,6)
+(;,50,12)
+(int,51,2)
+(id,nt,51,6)
+(;,51,9)
+(id,aux01,53,2)
+(=,53,8)
+(num,0,53,10)
+(;,53,12)
+(id,bs01,54,2)
+(=,54,7)
+(false,54,9)
+(;,54,15)
+(id,right,55,2)
+(=,55,8)
+(id,number,55,10)
+(.,55,16)
+(length,55,17)
+(;,55,24)
+(id,right,56,2)
+(=,56,8)
+(id,right,56,10)
+(-,56,16)
+(num,1,56,18)
+(;,56,20)
+(id,left,57,2)
+(=,57,7)
+(num,0,57,9)
+(;,57,11)
+(id,var_cont,58,2)
+(=,58,11)
+(true,58,13)
+(;,58,18)
+(while,59,2)
+((,59,8)
+(id,var_cont,59,9)
+(),59,17)
+({,59,18)
+(id,medium,60,6)
+(=,60,13)
+(id,left,60,15)
+(+,60,20)
+(id,right,60,22)
+(;,60,28)
+(id,medium,61,6)
+(=,61,13)
+(this,61,15)
+(.,61,19)
+(id,Div,61,20)
+((,61,23)
+(id,medium,61,24)
+(),61,30)
+(;,61,31)
+(id,aux01,62,6)
+(=,62,12)
+(id,number,62,14)
+([,62,20)
+(id,medium,62,21)
+(],62,27)
+(;,62,29)
+(if,63,6)
+((,63,9)
+(id,num,63,10)
+(<,63,14)
+(id,aux01,63,16)
+(),63,21)
+(id,right,63,23)
+(=,63,29)
+(id,medium,63,31)
+(-,63,38)
+(num,1,63,40)
+(;,63,42)
+(else,64,6)
+(id,left,64,11)
+(=,64,16)
+(id,medium,64,18)
+(+,64,25)
+(num,1,64,27)
+(;,64,29)
+(if,65,6)
+((,65,9)
+(this,65,10)
+(.,65,14)
+(id,Compare,65,15)
+((,65,22)
+(id,aux01,65,23)
+(,,65,28)
+(id,num,65,29)
+(),65,32)
+(),65,33)
+(id,var_cont,65,35)
+(=,65,44)
+(false,65,46)
+(;,65,52)
+(else,66,6)
+(id,var_cont,66,11)
+(=,66,20)
+(true,66,22)
+(;,66,27)
+(if,67,6)
+((,67,9)
+(id,right,67,10)
+(<,67,16)
+(id,left,67,18)
+(),67,22)
+(id,var_cont,67,24)
+(=,67,33)
+(false,67,35)
+(;,67,41)
+(else,68,6)
+(id,nt,68,11)
+(=,68,14)
+(num,0,68,16)
+(;,68,18)
+(},69,2)
+(if,71,2)
+((,71,5)
+(this,71,6)
+(.,71,10)
+(id,Compare,71,11)
+((,71,18)
+(id,aux01,71,19)
+(,,71,24)
+(id,num,71,25)
+(),71,28)
+(),71,29)
+(id,bs01,71,31)
+(=,71,36)
+(true,71,38)
+(;,71,43)
+(else,72,2)
+(id,bs01,72,7)
+(=,72,12)
+(false,72,14)
+(;,72,20)
+(return,73,2)
+(id,bs01,73,9)
+(;,73,14)
+(},74,5)
+(public,78,5)
+(int,78,12)
+(id,Div,78,16)
+((,78,19)
+(int,78,20)
+(id,num,78,24)
+(),78,27)
+({,78,28)
+(int,79,2)
+(id,count01,79,6)
+(;,79,14)
+(int,80,2)
+(id,count02,80,6)
+(;,80,14)
+(int,81,2)
+(id,aux03,81,6)
+(;,81,12)
+(id,count01,83,2)
+(=,83,10)
+(num,0,83,12)
+(;,83,14)
+(id,count02,84,2)
+(=,84,10)
+(num,0,84,12)
+(;,84,14)
+(id,aux03,85,2)
+(=,85,8)
+(id,num,85,10)
+(-,85,14)
+(num,1,85,16)
+(;,85,18)
+(while,86,2)
+((,86,8)
+(id,count02,86,9)
+(<,86,17)
+(id,aux03,86,19)
+(),86,24)
+({,86,26)
+(id,count01,87,6)
+(=,87,14)
+(id,count01,87,16)
+(+,87,24)
+(num,1,87,26)
+(;,87,28)
+(id,count02,88,6)
+(=,88,14)
+(id,count02,88,16)
+(+,88,24)
+(num,2,88,26)
+(;,88,28)
+(},89,2)
+(return,90,2)
+(id,count01,90,9)
+(;,90,17)
+(},91,5)
+(public,97,5)
+(boolean,97,12)
+(id,Compare,97,20)
+((,97,27)
+(int,97,28)
+(id,num1,97,32)
+(,,97,37)
+(int,97,39)
+(id,num2,97,43)
+(),97,47)
+({,97,48)
+(boolean,98,2)
+(id,retval,98,10)
+(;,98,17)
+(int,99,2)
+(id,aux02,99,6)
+(;,99,12)
+(id,retval,101,2)
+(=,101,9)
+(false,101,11)
+(;,101,17)
+(id,aux02,102,2)
+(=,102,8)
+(id,num2,102,10)
+(+,102,15)
+(num,1,102,17)
+(;,102,19)
+(if,103,2)
+((,103,5)
+(id,num1,103,6)
+(<,103,11)
+(id,num2,103,13)
+(),103,17)
+(id,retval,103,19)
+(=,103,26)
+(false,103,28)
+(;,103,34)
+(else,104,2)
+(if,104,7)
+((,104,10)
+(!,104,11)
+((,104,12)
+(id,num1,104,13)
+(<,104,18)
+(id,aux02,104,20)
+(),104,25)
+(),104,26)
+(id,retval,104,28)
+(=,104,35)
+(false,104,37)
+(;,104,43)
+(else,105,2)
+(id,retval,105,7)
+(=,105,14)
+(true,105,16)
+(;,105,21)
+(return,106,2)
+(id,retval,106,9)
+(;,106,16)
+(},107,5)
+(public,110,5)
+(int,110,12)
+(id,Print,110,16)
+((,110,21)
+(),110,22)
+({,110,23)
+(int,111,2)
+(id,j,111,6)
+(;,111,8)
+(id,j,113,2)
+(=,113,4)
+(num,1,113,6)
+(;,113,8)
+(while,114,2)
+((,114,8)
+(id,j,114,9)
+(<,114,11)
+((,114,13)
+(id,size,114,14)
+(),114,18)
+(),114,19)
+({,114,21)
+(System.out.println,115,6)
+((,115,24)
+(id,number,115,25)
+([,115,31)
+(id,j,115,32)
+(],115,33)
+(),115,34)
+(;,115,35)
+(id,j,116,6)
+(=,116,8)
+(id,j,116,10)
+(+,116,12)
+(num,1,116,14)
+(;,116,16)
+(},117,2)
+(System.out.println,118,2)
+((,118,20)
+(num,99999,118,21)
+(),118,26)
+(;,118,27)
+(return,119,2)
+(num,0,119,9)
+(;,119,11)
+(},120,5)
+(public,124,5)
+(int,124,12)
+(id,Init,124,16)
+((,124,20)
+(int,124,21)
+(id,sz,124,25)
+(),124,27)
+({,124,28)
+(int,125,2)
+(id,j,125,6)
+(;,125,8)
+(int,126,2)
+(id,k,126,6)
+(;,126,8)
+(int,127,2)
+(id,aux02,127,6)
+(;,127,12)
+(int,128,2)
+(id,aux01,128,6)
+(;,128,12)
+(id,size,130,2)
+(=,130,7)
+(id,sz,130,9)
+(;,130,12)
+(id,number,131,2)
+(=,131,9)
+(new,131,11)
+(int,131,15)
+([,131,18)
+(id,sz,131,19)
+(],131,21)
+(;,131,23)
+(id,j,133,2)
+(=,133,4)
+(num,1,133,6)
+(;,133,8)
+(id,k,134,2)
+(=,134,4)
+(id,size,134,6)
+(+,134,11)
+(num,1,134,13)
+(;,134,15)
+(while,135,2)
+((,135,8)
+(id,j,135,9)
+(<,135,11)
+((,135,13)
+(id,size,135,14)
+(),135,18)
+(),135,19)
+({,135,21)
+(id,aux01,136,6)
+(=,136,12)
+(num,2,136,14)
+(*,136,16)
+(id,j,136,18)
+(;,136,20)
+(id,aux02,137,6)
+(=,137,12)
+(id,k,137,14)
+(-,137,16)
+(num,3,137,18)
+(;,137,20)
+(id,number,138,6)
+([,138,12)
+(id,j,138,13)
+(],138,14)
+(=,138,16)
+(id,aux01,138,18)
+(+,138,24)
+(id,aux02,138,26)
+(;,138,32)
+(id,j,139,6)
+(=,139,8)
+(id,j,139,10)
+(+,139,12)
+(num,1,139,14)
+(;,139,16)
+(id,k,140,6)
+(=,140,8)
+(id,k,140,10)
+(-,140,12)
+(num,1,140,14)
+(;,140,16)
+(},141,2)
+(return,142,2)
+(num,0,142,9)
+(;,142,11)
+(},143,5)
+(},145,1)
+(<<EOF>>,146,1)

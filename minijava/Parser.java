@@ -1,10 +1,10 @@
-// Output created by jacc on Mon Jun 05 17:16:56 BRT 2017
+// Output created by jacc on Mon Jun 05 18:03:46 BRT 2017
 
 package minijava;
 
     import minijava.ast.*;
 
-public class Parser implements TokensNew {
+class Parser implements Tokens {
     private int yyss = 100;
     private int yytok;
     private int yysp = 0;
@@ -1455,8 +1455,8 @@ public class Parser implements TokensNew {
                 case 251:
                     switch (yytok) {
                         case '}':
-                        case PUBLIC:
                         case INT:
+                        case PUBLIC:
                         case ID:
                         case BOOLEAN:
                             yyn = yyr7();
@@ -1619,8 +1619,8 @@ public class Parser implements TokensNew {
                 case 262:
                     switch (yytok) {
                         case '}':
-                        case PUBLIC:
                         case INT:
+                        case PUBLIC:
                         case ID:
                         case BOOLEAN:
                             yyn = yyr7();
@@ -2872,8 +2872,8 @@ public class Parser implements TokensNew {
             case '}':
             case '{':
             case RETURN:
-            case PRINTLN:
             case IF:
+            case PRINTLN:
             case ID:
             case ELSE:
                 return yyr19();
@@ -3069,8 +3069,8 @@ public class Parser implements TokensNew {
             case '}':
             case '{':
             case RETURN:
-            case PRINTLN:
             case IF:
+            case PRINTLN:
             case ID:
             case ELSE:
                 return yyr24();
@@ -3514,8 +3514,8 @@ public class Parser implements TokensNew {
             case '}':
             case '{':
             case RETURN:
-            case PRINTLN:
             case IF:
+            case PRINTLN:
             case ID:
                 return yyr20();
         }
@@ -3528,8 +3528,8 @@ public class Parser implements TokensNew {
             case '}':
             case '{':
             case RETURN:
-            case PRINTLN:
             case IF:
+            case PRINTLN:
             case ID:
             case ELSE:
                 return yyr23();
@@ -3543,8 +3543,8 @@ public class Parser implements TokensNew {
             case '}':
             case '{':
             case RETURN:
-            case PRINTLN:
             case IF:
+            case PRINTLN:
             case ID:
             case ELSE:
                 return yyr22();
@@ -3739,8 +3739,8 @@ public class Parser implements TokensNew {
             case '}':
             case '{':
             case RETURN:
-            case PRINTLN:
             case IF:
+            case PRINTLN:
             case ID:
             case ELSE:
                 return yyr25();
@@ -3754,8 +3754,8 @@ public class Parser implements TokensNew {
             case '}':
             case '{':
             case RETURN:
-            case PRINTLN:
             case IF:
+            case PRINTLN:
             case ID:
             case ELSE:
                 return yyr21();
@@ -3814,12 +3814,12 @@ public class Parser implements TokensNew {
         switch (yytok) {
             case WHILE:
             case '}':
+            case '{':
+            case INT:
             case RETURN:
             case PUBLIC:
-            case INT:
-            case PRINTLN:
-            case '{':
             case IF:
+            case PRINTLN:
             case ID:
             case BOOLEAN:
                 return yyr6();
@@ -3856,12 +3856,12 @@ public class Parser implements TokensNew {
         switch (yytok) {
             case WHILE:
             case '}':
+            case '{':
+            case INT:
             case RETURN:
             case PUBLIC:
-            case INT:
-            case PRINTLN:
-            case '{':
             case IF:
+            case PRINTLN:
             case ID:
             case BOOLEAN:
                 return yyr8();
@@ -3873,10 +3873,10 @@ public class Parser implements TokensNew {
         switch (yytok) {
             case WHILE:
             case '{':
-            case RETURN:
             case INT:
-            case PRINTLN:
+            case RETURN:
             case IF:
+            case PRINTLN:
             case ID:
             case BOOLEAN:
                 return yyr7();
@@ -3888,10 +3888,10 @@ public class Parser implements TokensNew {
         switch (yytok) {
             case WHILE:
             case '{':
-            case RETURN:
             case INT:
-            case PRINTLN:
+            case RETURN:
             case IF:
+            case PRINTLN:
             case ID:
             case BOOLEAN:
                 return yyr7();
