@@ -1,4 +1,4 @@
-// Output created by jacc on Mon Jun 05 10:00:33 BRT 2017
+// Output created by jacc on Mon Jun 05 17:16:56 BRT 2017
 
 package minijava;
 
@@ -4050,7 +4050,7 @@ public class Parser implements TokensNew {
     }
 
     private int yyr2() { // classes : classes classe
-        { ((java.util.List)yysv[yysp-2]).add(0, ((Classe)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-2]); }
+        { ((java.util.List)yysv[yysp-2]).add(((Classe)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-2]); }
         yysv[yysp-=2] = yyrv;
         return 49;
     }
@@ -4114,7 +4114,7 @@ public class Parser implements TokensNew {
     }
 
     private int yyr26() { // cmds : cmd cmds
-        { ((java.util.List)yysv[yysp-1]).add(((Cmd)yysv[yysp-2])); yyrv = ((java.util.List)yysv[yysp-1]); }
+        { ((java.util.List)yysv[yysp-1]).add(0, ((Cmd)yysv[yysp-2])); yyrv = ((java.util.List)yysv[yysp-1]); }
         yysv[yysp-=2] = yyrv;
         return yypcmds();
     }
@@ -4295,7 +4295,7 @@ public class Parser implements TokensNew {
     }
 
     private int yyr9() { // metodos : metodos metodo
-        { ((java.util.List)yysv[yysp-2]).add(0, ((Metodo)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-2]); }
+        { ((java.util.List)yysv[yysp-2]).add(((Metodo)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-2]); }
         yysv[yysp-=2] = yyrv;
         return yypmetodos();
     }
