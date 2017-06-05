@@ -1,10 +1,10 @@
-// Output created by jacc on Sun Jun 09 13:11:15 BRT 2013
+// Output created by jacc on Sun Jun 04 21:10:49 BRT 2017
 
 package minijava;
 
-import minijava.ast.*;
+    import minijava.ast.*;
 
-public class Parser implements Tokens {
+class Parser implements TokensNew {
     private int yyss = 100;
     private int yytok;
     private int yysp = 0;
@@ -28,13 +28,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 152:
+                case 156:
                     switch (yytok) {
                         case CLASS:
-                            yyn = 2;
+                            yyn = 3;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 1:
@@ -42,31 +42,28 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 153:
+                case 157:
                     switch (yytok) {
                         case ENDINPUT:
-                            yyn = 304;
+                            yyn = 312;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 2:
                     yyst[yysp] = 2;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 154:
+                case 158:
                     switch (yytok) {
-                        case ID:
-                            yyn = 3;
+                        case CLASS:
+                        case ENDINPUT:
+                            yyn = yyr4();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 3:
@@ -78,31 +75,30 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 155:
+                case 159:
                     switch (yytok) {
-                        case '{':
-                            yyn = 4;
+                        case ID:
+                            yyn = 5;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 4:
                     yyst[yysp] = 4;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 156:
+                case 160:
                     switch (yytok) {
-                        case PUBLIC:
-                            yyn = 5;
+                        case CLASS:
+                            yyn = 7;
+                            continue;
+                        case ENDINPUT:
+                            yyn = yyr1();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 5:
@@ -114,31 +110,28 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 157:
+                case 161:
                     switch (yytok) {
-                        case STATIC:
-                            yyn = 6;
+                        case '{':
+                            yyn = 8;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 6:
                     yyst[yysp] = 6;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 158:
+                case 162:
                     switch (yytok) {
-                        case VOID:
-                            yyn = 7;
+                        case CLASS:
+                        case ENDINPUT:
+                            yyn = yyr3();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 7:
@@ -150,13 +143,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 159:
+                case 163:
                     switch (yytok) {
-                        case MAIN:
-                            yyn = 8;
+                        case ID:
+                            yyn = 9;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 8:
@@ -168,13 +161,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 160:
+                case 164:
                     switch (yytok) {
-                        case '(':
-                            yyn = 9;
+                        case PUBLIC:
+                            yyn = 10;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 9:
@@ -186,13 +179,16 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 161:
+                case 165:
                     switch (yytok) {
-                        case STRING:
-                            yyn = 10;
+                        case EXTENDS:
+                            yyn = 11;
+                            continue;
+                        case '{':
+                            yyn = 12;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 10:
@@ -204,13 +200,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 162:
+                case 166:
                     switch (yytok) {
-                        case '[':
-                            yyn = 11;
+                        case STATIC:
+                            yyn = 13;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 11:
@@ -222,13 +218,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 163:
+                case 167:
                     switch (yytok) {
-                        case ']':
-                            yyn = 12;
+                        case ID:
+                            yyn = 14;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 12:
@@ -240,13 +236,17 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 164:
+                case 168:
                     switch (yytok) {
+                        case '}':
+                        case INT:
+                        case PUBLIC:
                         case ID:
-                            yyn = 13;
+                        case BOOLEAN:
+                            yyn = yyr8();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 13:
@@ -258,13 +258,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 165:
+                case 169:
                     switch (yytok) {
-                        case ')':
-                            yyn = 14;
+                        case VOID:
+                            yyn = 16;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 14:
@@ -276,17 +276,41 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 166:
+                case 170:
                     switch (yytok) {
                         case '{':
-                            yyn = 15;
+                            yyn = 17;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 15:
                     yyst[yysp] = 15;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 171:
+                    switch (yytok) {
+                        case BOOLEAN:
+                            yyn = 21;
+                            continue;
+                        case ID:
+                            yyn = 22;
+                            continue;
+                        case INT:
+                            yyn = 23;
+                            continue;
+                        case '}':
+                        case PUBLIC:
+                            yyn = yyr11();
+                            continue;
+                    }
+                    yyn = 315;
+                    continue;
+
+                case 16:
+                    yyst[yysp] = 16;
                     yysv[yysp] = (token
                                  );
                     yytok = (proximo()
@@ -294,39 +318,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 167:
+                case 172:
                     switch (yytok) {
-                        case ID:
-                            yyn = 17;
-                            continue;
-                        case IF:
-                            yyn = 18;
-                            continue;
-                        case PRINTLN:
-                            yyn = 19;
-                            continue;
-                        case WHILE:
-                            yyn = 20;
-                            continue;
-                        case '{':
-                            yyn = 21;
+                        case MAIN:
+                            yyn = 24;
                             continue;
                     }
-                    yyn = 307;
-                    continue;
-
-                case 16:
-                    yyst[yysp] = 16;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 168:
-                    switch (yytok) {
-                        case '}':
-                            yyn = 22;
-                            continue;
-                    }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 17:
@@ -338,70 +336,57 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 169:
+                case 173:
                     switch (yytok) {
-                        case '=':
-                            yyn = 23;
-                            continue;
-                        case '[':
-                            yyn = 24;
+                        case '}':
+                        case INT:
+                        case PUBLIC:
+                        case ID:
+                        case BOOLEAN:
+                            yyn = yyr8();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 18:
                     yyst[yysp] = 18;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 170:
+                case 174:
                     switch (yytok) {
-                        case '(':
-                            yyn = 25;
+                        case PUBLIC:
+                            yyn = 27;
+                            continue;
+                        case '}':
+                            yyn = 28;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 19:
                     yyst[yysp] = 19;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 171:
+                case 175:
                     switch (yytok) {
-                        case '(':
-                            yyn = 26;
+                        case ID:
+                            yyn = 29;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 20:
                     yyst[yysp] = 20;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 172:
-                    switch (yytok) {
-                        case '(':
-                            yyn = 27;
-                            continue;
-                    }
-                    yyn = 307;
+                case 176:
+                    yyn = yys20();
                     continue;
 
                 case 21:
@@ -413,8 +398,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 173:
-                    yyn = yys21();
+                case 177:
+                    switch (yytok) {
+                        case ID:
+                            yyn = yyr17();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 22:
@@ -426,13 +416,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 174:
+                case 178:
                     switch (yytok) {
-                        case '}':
-                            yyn = 30;
+                        case ID:
+                            yyn = yyr19();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 23:
@@ -444,8 +434,16 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 175:
-                    yyn = yys23();
+                case 179:
+                    switch (yytok) {
+                        case '[':
+                            yyn = 30;
+                            continue;
+                        case ID:
+                            yyn = yyr18();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 24:
@@ -457,34 +455,52 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 176:
-                    yyn = yys24();
+                case 180:
+                    switch (yytok) {
+                        case '(':
+                            yyn = 31;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 25:
                     yyst[yysp] = 25;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 177:
-                    yyn = yys25();
+                case 181:
+                    switch (yytok) {
+                        case BOOLEAN:
+                            yyn = 21;
+                            continue;
+                        case ID:
+                            yyn = 22;
+                            continue;
+                        case INT:
+                            yyn = 23;
+                            continue;
+                        case '}':
+                        case PUBLIC:
+                            yyn = yyr11();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 26:
                     yyst[yysp] = 26;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 178:
-                    yyn = yys26();
+                case 182:
+                    switch (yytok) {
+                        case '}':
+                        case PUBLIC:
+                            yyn = yyr10();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 27:
@@ -496,31 +512,56 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 179:
-                    yyn = yys27();
+                case 183:
+                    switch (yytok) {
+                        case BOOLEAN:
+                            yyn = 21;
+                            continue;
+                        case ID:
+                            yyn = 22;
+                            continue;
+                        case INT:
+                            yyn = 23;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 28:
                     yyst[yysp] = 28;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 180:
-                    yyn = yys28();
+                case 184:
+                    switch (yytok) {
+                        case CLASS:
+                        case ENDINPUT:
+                            yyn = yyr6();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 29:
                     yyst[yysp] = 29;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 181:
+                case 185:
                     switch (yytok) {
-                        case '}':
-                            yyn = 47;
+                        case ';':
+                            yyn = 34;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 30:
@@ -532,36 +573,17 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 182:
+                case 186:
                     switch (yytok) {
-                        case CLASS:
-                        case ENDINPUT:
-                            yyn = yyr3();
+                        case ']':
+                            yyn = 35;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 31:
                     yyst[yysp] = 31;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 183:
-                    yyn = yys31();
-                    continue;
-
-                case 32:
-                    yyst[yysp] = 32;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 184:
-                    yyn = yys32();
-                    continue;
-
-                case 33:
-                    yyst[yysp] = 33;
                     yysv[yysp] = (token
                                  );
                     yytok = (proximo()
@@ -569,8 +591,44 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 185:
-                    yyn = yys33();
+                case 187:
+                    switch (yytok) {
+                        case STRING:
+                            yyn = 36;
+                            continue;
+                    }
+                    yyn = 315;
+                    continue;
+
+                case 32:
+                    yyst[yysp] = 32;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 188:
+                    switch (yytok) {
+                        case PUBLIC:
+                            yyn = 27;
+                            continue;
+                        case '}':
+                            yyn = 37;
+                            continue;
+                    }
+                    yyn = 315;
+                    continue;
+
+                case 33:
+                    yyst[yysp] = 33;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 189:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 38;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 34:
@@ -582,7 +640,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 186:
+                case 190:
                     yyn = yys34();
                     continue;
 
@@ -595,16 +653,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 187:
+                case 191:
                     switch (yytok) {
                         case ID:
-                            yyn = 60;
-                            continue;
-                        case INT:
-                            yyn = 61;
+                            yyn = yyr16();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 36:
@@ -616,8 +671,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 188:
-                    yyn = yys36();
+                case 192:
+                    switch (yytok) {
+                        case '[':
+                            yyn = 39;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 37:
@@ -629,8 +689,14 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 189:
-                    yyn = yys37();
+                case 193:
+                    switch (yytok) {
+                        case CLASS:
+                        case ENDINPUT:
+                            yyn = yyr5();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 38:
@@ -642,8 +708,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 190:
-                    yyn = yys38();
+                case 194:
+                    switch (yytok) {
+                        case '(':
+                            yyn = 40;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 39:
@@ -655,8 +726,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 191:
-                    yyn = yys39();
+                case 195:
+                    switch (yytok) {
+                        case ']':
+                            yyn = 41;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 40:
@@ -668,8 +744,22 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 192:
-                    yyn = yys40();
+                case 196:
+                    switch (yytok) {
+                        case BOOLEAN:
+                            yyn = 21;
+                            continue;
+                        case ID:
+                            yyn = 22;
+                            continue;
+                        case INT:
+                            yyn = 23;
+                            continue;
+                        case ')':
+                            yyn = 44;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 41:
@@ -681,8 +771,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 193:
-                    yyn = yys41();
+                case 197:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 45;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 42:
@@ -690,8 +785,16 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 194:
-                    yyn = yys42();
+                case 198:
+                    switch (yytok) {
+                        case ')':
+                            yyn = 46;
+                            continue;
+                        case ',':
+                            yyn = 47;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 43:
@@ -699,41 +802,67 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 195:
-                    yyn = yys43();
+                case 199:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 48;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 44:
                     yyst[yysp] = 44;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 196:
-                    yyn = yys44();
+                case 200:
+                    switch (yytok) {
+                        case '{':
+                            yyn = 49;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 45:
                     yyst[yysp] = 45;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 197:
-                    yyn = yys45();
+                case 201:
+                    switch (yytok) {
+                        case ')':
+                            yyn = 50;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 46:
                     yyst[yysp] = 46;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 198:
+                case 202:
                     switch (yytok) {
-                        case '}':
-                        case RETURN:
-                            yyn = yyr19();
+                        case '{':
+                            yyn = 51;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 47:
@@ -745,25 +874,38 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 199:
-                    yyn = yys47();
+                case 203:
+                    switch (yytok) {
+                        case BOOLEAN:
+                            yyn = 21;
+                            continue;
+                        case ID:
+                            yyn = 22;
+                            continue;
+                        case INT:
+                            yyn = 23;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 48:
                     yyst[yysp] = 48;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 200:
+                case 204:
                     switch (yytok) {
-                        case CLASS:
-                            yyn = 70;
-                            continue;
-                        case ENDINPUT:
-                            yyn = yyr1();
+                        case ')':
+                        case ',':
+                            yyn = yyr15();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 49:
@@ -775,7 +917,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 201:
+                case 205:
                     yyn = yys49();
                     continue;
 
@@ -788,8 +930,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 202:
-                    yyn = yys50();
+                case 206:
+                    switch (yytok) {
+                        case '{':
+                            yyn = 54;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 51:
@@ -801,33 +948,30 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 203:
+                case 207:
                     yyn = yys51();
                     continue;
 
                 case 52:
                     yyst[yysp] = 52;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 204:
-                    yyn = yys52();
+                case 208:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 56;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 53:
                     yyst[yysp] = 53;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 205:
+                case 209:
                     yyn = yys53();
                     continue;
 
@@ -840,20 +984,33 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 206:
-                    yyn = yys54();
+                case 210:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 59;
+                            continue;
+                        case IF:
+                            yyn = 60;
+                            continue;
+                        case PRINTLN:
+                            yyn = 61;
+                            continue;
+                        case WHILE:
+                            yyn = 62;
+                            continue;
+                        case '{':
+                            yyn = 63;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 55:
                     yyst[yysp] = 55;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 207:
+                case 211:
                     yyn = yys55();
                     continue;
 
@@ -866,42 +1023,37 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 208:
-                    yyn = yys56();
+                case 212:
+                    switch (yytok) {
+                        case ')':
+                        case ',':
+                            yyn = yyr14();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 57:
                     yyst[yysp] = 57;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 209:
+                case 213:
                     yyn = yys57();
                     continue;
 
                 case 58:
                     yyst[yysp] = 58;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 210:
+                case 214:
                     switch (yytok) {
-                        case ID:
-                            yyn = 79;
-                            continue;
-                        case LENGTH:
-                            yyn = 80;
+                        case '}':
+                            yyn = 67;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 59:
@@ -913,8 +1065,16 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 211:
-                    yyn = yys59();
+                case 215:
+                    switch (yytok) {
+                        case '=':
+                            yyn = 68;
+                            continue;
+                        case '[':
+                            yyn = 69;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 60:
@@ -926,13 +1086,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 212:
+                case 216:
                     switch (yytok) {
                         case '(':
-                            yyn = 82;
+                            yyn = 70;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 61:
@@ -944,30 +1104,43 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 213:
+                case 217:
                     switch (yytok) {
-                        case '[':
-                            yyn = 83;
+                        case '(':
+                            yyn = 71;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 62:
                     yyst[yysp] = 62;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 214:
-                    yyn = yys62();
+                case 218:
+                    switch (yytok) {
+                        case '(':
+                            yyn = 72;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 63:
                     yyst[yysp] = 63;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 215:
+                case 219:
                     yyn = yys63();
                     continue;
 
@@ -976,26 +1149,17 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 216:
+                case 220:
                     yyn = yys64();
                     continue;
 
                 case 65:
                     yyst[yysp] = 65;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 217:
-                    switch (yytok) {
-                        case '=':
-                            yyn = 85;
-                            continue;
-                    }
-                    yyn = 307;
+                case 221:
+                    yyn = yys65();
                     continue;
 
                 case 66:
@@ -1007,25 +1171,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 218:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 17;
-                            continue;
-                        case IF:
-                            yyn = 18;
-                            continue;
-                        case PRINTLN:
-                            yyn = 19;
-                            continue;
-                        case WHILE:
-                            yyn = 20;
-                            continue;
-                        case '{':
-                            yyn = 21;
-                            continue;
-                    }
-                    yyn = 307;
+                case 222:
+                    yyn = yys66();
                     continue;
 
                 case 67:
@@ -1037,13 +1184,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 219:
+                case 223:
                     switch (yytok) {
-                        case ';':
-                            yyn = 87;
+                        case '}':
+                            yyn = 91;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 68:
@@ -1055,40 +1202,21 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 220:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 17;
-                            continue;
-                        case IF:
-                            yyn = 18;
-                            continue;
-                        case PRINTLN:
-                            yyn = 19;
-                            continue;
-                        case WHILE:
-                            yyn = 20;
-                            continue;
-                        case '{':
-                            yyn = 21;
-                            continue;
-                    }
-                    yyn = 307;
+                case 224:
+                    yyn = yys68();
                     continue;
 
                 case 69:
                     yyst[yysp] = 69;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 221:
-                    switch (yytok) {
-                        case CLASS:
-                        case ENDINPUT:
-                            yyn = yyr2();
-                            continue;
-                    }
-                    yyn = 307;
+                case 225:
+                    yyn = yys69();
                     continue;
 
                 case 70:
@@ -1100,30 +1228,33 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 222:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 89;
-                            continue;
-                    }
-                    yyn = 307;
+                case 226:
+                    yyn = yys70();
                     continue;
 
                 case 71:
                     yyst[yysp] = 71;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 223:
+                case 227:
                     yyn = yys71();
                     continue;
 
                 case 72:
                     yyst[yysp] = 72;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 224:
+                case 228:
                     yyn = yys72();
                     continue;
 
@@ -1132,16 +1263,20 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 225:
+                case 229:
                     yyn = yys73();
                     continue;
 
                 case 74:
                     yyst[yysp] = 74;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 226:
+                case 230:
                     yyn = yys74();
                     continue;
 
@@ -1150,8 +1285,16 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 227:
-                    yyn = yys75();
+                case 231:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ';':
+                            yyn = 100;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 76:
@@ -1159,7 +1302,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 228:
+                case 232:
                     yyn = yys76();
                     continue;
 
@@ -1168,7 +1311,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 229:
+                case 233:
                     yyn = yys77();
                     continue;
 
@@ -1177,25 +1320,30 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 230:
+                case 234:
                     yyn = yys78();
                     continue;
 
                 case 79:
                     yyst[yysp] = 79;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 231:
+                case 235:
                     yyn = yys79();
                     continue;
 
                 case 80:
                     yyst[yysp] = 80;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 236:
+                    yyn = yys80();
+                    continue;
+
+                case 81:
+                    yyst[yysp] = 81;
                     yysv[yysp] = (token
                                  );
                     yytok = (proximo()
@@ -1203,16 +1351,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 232:
-                    yyn = yys80();
-                    continue;
-
-                case 81:
-                    yyst[yysp] = 81;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 233:
+                case 237:
                     yyn = yys81();
                     continue;
 
@@ -1225,13 +1364,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 234:
-                    switch (yytok) {
-                        case ')':
-                            yyn = 92;
-                            continue;
-                    }
-                    yyn = 307;
+                case 238:
+                    yyn = yys82();
                     continue;
 
                 case 83:
@@ -1243,8 +1377,16 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 235:
-                    yyn = yys83();
+                case 239:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 110;
+                            continue;
+                        case INT:
+                            yyn = 111;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 84:
@@ -1256,7 +1398,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 236:
+                case 240:
                     yyn = yys84();
                     continue;
 
@@ -1269,16 +1411,20 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 237:
+                case 241:
                     yyn = yys85();
                     continue;
 
                 case 86:
                     yyst[yysp] = 86;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 238:
+                case 242:
                     yyn = yys86();
                     continue;
 
@@ -1291,16 +1437,20 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 239:
+                case 243:
                     yyn = yys87();
                     continue;
 
                 case 88:
                     yyst[yysp] = 88;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 240:
+                case 244:
                     yyn = yys88();
                     continue;
 
@@ -1313,16 +1463,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 241:
-                    switch (yytok) {
-                        case EXTENDS:
-                            yyn = 96;
-                            continue;
-                        case '{':
-                            yyn = 97;
-                            continue;
-                    }
-                    yyn = 307;
+                case 245:
+                    yyn = yys89();
                     continue;
 
                 case 90:
@@ -1334,7 +1476,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 242:
+                case 246:
                     yyn = yys90();
                     continue;
 
@@ -1347,21 +1489,31 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 243:
-                    yyn = yys91();
+                case 247:
+                    switch (yytok) {
+                        case CLASS:
+                        case ENDINPUT:
+                            yyn = yyr2();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 92:
                     yyst[yysp] = 92;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 244:
-                    yyn = yys92();
+                case 248:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ';':
+                            yyn = 115;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 93:
@@ -1369,8 +1521,16 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 245:
-                    yyn = yys93();
+                case 249:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ']':
+                            yyn = 116;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 94:
@@ -1378,56 +1538,50 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 246:
-                    yyn = yys94();
+                case 250:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ')':
+                            yyn = 117;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 95:
                     yyst[yysp] = 95;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 247:
+                case 251:
                     switch (yytok) {
-                        case ID:
-                            yyn = 17;
+                        case AND:
+                            yyn = 99;
                             continue;
-                        case IF:
-                            yyn = 18;
-                            continue;
-                        case PRINTLN:
-                            yyn = 19;
-                            continue;
-                        case WHILE:
-                            yyn = 20;
-                            continue;
-                        case '{':
-                            yyn = 21;
+                        case ')':
+                            yyn = 118;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 96:
                     yyst[yysp] = 96;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 248:
+                case 252:
                     switch (yytok) {
-                        case ID:
-                            yyn = 104;
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ')':
+                            yyn = 119;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 97:
@@ -1439,17 +1593,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 249:
-                    switch (yytok) {
-                        case '}':
-                        case INT:
-                        case PUBLIC:
-                        case ID:
-                        case BOOLEAN:
-                            yyn = yyr7();
-                            continue;
-                    }
-                    yyn = 307;
+                case 253:
+                    yyn = yys97();
                     continue;
 
                 case 98:
@@ -1457,25 +1602,29 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 250:
-                    yyn = yys98();
+                case 254:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ';':
+                            yyn = 120;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 99:
                     yyst[yysp] = 99;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 251:
-                    switch (yytok) {
-                        case ')':
-                            yyn = 106;
-                            continue;
-                        case ',':
-                            yyn = 107;
-                            continue;
-                    }
-                    yyn = 307;
+                case 255:
+                    yyn = yys99();
                     continue;
 
                 case 100:
@@ -1487,8 +1636,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 252:
-                    yyn = yys100();
+                case 256:
+                    switch (yytok) {
+                        case '}':
+                            yyn = 122;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 101:
@@ -1500,7 +1654,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 253:
+                case 257:
                     yyn = yys101();
                     continue;
 
@@ -1513,17 +1667,29 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 254:
+                case 258:
                     yyn = yys102();
                     continue;
 
                 case 103:
                     yyst[yysp] = 103;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 255:
-                    yyn = yys103();
+                case 259:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 125;
+                            continue;
+                        case LENGTH:
+                            yyn = 126;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 104:
@@ -1535,37 +1701,21 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 256:
-                    switch (yytok) {
-                        case '{':
-                            yyn = 108;
-                            continue;
-                    }
-                    yyn = 307;
+                case 260:
+                    yyn = yys104();
                     continue;
 
                 case 105:
                     yyst[yysp] = 105;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 257:
-                    switch (yytok) {
-                        case BOOLEAN:
-                            yyn = 112;
-                            continue;
-                        case ID:
-                            yyn = 113;
-                            continue;
-                        case INT:
-                            yyn = 114;
-                            continue;
-                        case '}':
-                        case PUBLIC:
-                            yyn = yyr10();
-                            continue;
-                    }
-                    yyn = 307;
+                case 261:
+                    yyn = yys105();
                     continue;
 
                 case 106:
@@ -1577,7 +1727,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 258:
+                case 262:
                     yyn = yys106();
                     continue;
 
@@ -1590,7 +1740,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 259:
+                case 263:
                     yyn = yys107();
                     continue;
 
@@ -1603,79 +1753,12 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 260:
-                    switch (yytok) {
-                        case '}':
-                        case INT:
-                        case PUBLIC:
-                        case ID:
-                        case BOOLEAN:
-                            yyn = yyr7();
-                            continue;
-                    }
-                    yyn = 307;
+                case 264:
+                    yyn = yys108();
                     continue;
 
                 case 109:
                     yyst[yysp] = 109;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 261:
-                    switch (yytok) {
-                        case PUBLIC:
-                            yyn = 118;
-                            continue;
-                        case '}':
-                            yyn = 119;
-                            continue;
-                    }
-                    yyn = 307;
-                    continue;
-
-                case 110:
-                    yyst[yysp] = 110;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 262:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 120;
-                            continue;
-                    }
-                    yyn = 307;
-                    continue;
-
-                case 111:
-                    yyst[yysp] = 111;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 263:
-                    yyn = yys111();
-                    continue;
-
-                case 112:
-                    yyst[yysp] = 112;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 264:
-                    switch (yytok) {
-                        case ID:
-                            yyn = yyr16();
-                            continue;
-                    }
-                    yyn = 307;
-                    continue;
-
-                case 113:
-                    yyst[yysp] = 113;
                     yysv[yysp] = (token
                                  );
                     yytok = (proximo()
@@ -1684,16 +1767,11 @@ public class Parser implements Tokens {
                         yyexpand();
                     }
                 case 265:
-                    switch (yytok) {
-                        case ID:
-                            yyn = yyr18();
-                            continue;
-                    }
-                    yyn = 307;
+                    yyn = yys109();
                     continue;
 
-                case 114:
-                    yyst[yysp] = 114;
+                case 110:
+                    yyst[yysp] = 110;
                     yysv[yysp] = (token
                                  );
                     yytok = (proximo()
@@ -1703,62 +1781,125 @@ public class Parser implements Tokens {
                     }
                 case 266:
                     switch (yytok) {
-                        case '[':
-                            yyn = 121;
-                            continue;
-                        case ID:
-                            yyn = yyr17();
+                        case '(':
+                            yyn = 133;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
-                case 115:
-                    yyst[yysp] = 115;
+                case 111:
+                    yyst[yysp] = 111;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
                 case 267:
-                    yyn = yys115();
+                    switch (yytok) {
+                        case '[':
+                            yyn = 134;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
-                case 116:
-                    yyst[yysp] = 116;
+                case 112:
+                    yyst[yysp] = 112;
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
                 case 268:
-                    switch (yytok) {
-                        case BOOLEAN:
-                            yyn = 112;
-                            continue;
-                        case ID:
-                            yyn = 113;
-                            continue;
-                        case INT:
-                            yyn = 114;
-                            continue;
-                        case '}':
-                        case PUBLIC:
-                            yyn = yyr10();
-                            continue;
-                    }
-                    yyn = 307;
+                    yyn = yys112();
                     continue;
 
-                case 117:
-                    yyst[yysp] = 117;
+                case 113:
+                    yyst[yysp] = 113;
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
                 case 269:
                     switch (yytok) {
-                        case '}':
-                        case PUBLIC:
-                            yyn = yyr9();
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ')':
+                            yyn = 135;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
+                    continue;
+
+                case 114:
+                    yyst[yysp] = 114;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 270:
+                    yyn = yys114();
+                    continue;
+
+                case 115:
+                    yyst[yysp] = 115;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 271:
+                    yyn = yys115();
+                    continue;
+
+                case 116:
+                    yyst[yysp] = 116;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 272:
+                    switch (yytok) {
+                        case '=':
+                            yyn = 136;
+                            continue;
+                    }
+                    yyn = 315;
+                    continue;
+
+                case 117:
+                    yyst[yysp] = 117;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 273:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 59;
+                            continue;
+                        case IF:
+                            yyn = 60;
+                            continue;
+                        case PRINTLN:
+                            yyn = 61;
+                            continue;
+                        case WHILE:
+                            yyn = 62;
+                            continue;
+                        case '{':
+                            yyn = 63;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 118:
@@ -1770,19 +1911,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 270:
+                case 274:
                     switch (yytok) {
-                        case BOOLEAN:
-                            yyn = 112;
-                            continue;
-                        case ID:
-                            yyn = 113;
-                            continue;
-                        case INT:
-                            yyn = 114;
+                        case ';':
+                            yyn = 138;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 119:
@@ -1794,14 +1929,25 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 271:
+                case 275:
                     switch (yytok) {
-                        case CLASS:
-                        case ENDINPUT:
-                            yyn = yyr4();
+                        case ID:
+                            yyn = 59;
+                            continue;
+                        case IF:
+                            yyn = 60;
+                            continue;
+                        case PRINTLN:
+                            yyn = 61;
+                            continue;
+                        case WHILE:
+                            yyn = 62;
+                            continue;
+                        case '{':
+                            yyn = 63;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 120:
@@ -1813,17 +1959,26 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 272:
+                case 276:
                     switch (yytok) {
-                        case ';':
-                            yyn = 124;
+                        case '}':
+                            yyn = 140;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 121:
                     yyst[yysp] = 121;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 277:
+                    yyn = yys121();
+                    continue;
+
+                case 122:
+                    yyst[yysp] = 122;
                     yysv[yysp] = (token
                                  );
                     yytok = (proximo()
@@ -1831,30 +1986,14 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 273:
+                case 278:
                     switch (yytok) {
-                        case ']':
-                            yyn = 125;
-                            continue;
-                    }
-                    yyn = 307;
-                    continue;
-
-                case 122:
-                    yyst[yysp] = 122;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
-                    }
-                case 274:
-                    switch (yytok) {
-                        case PUBLIC:
-                            yyn = 118;
-                            continue;
                         case '}':
-                            yyn = 126;
+                        case PUBLIC:
+                            yyn = yyr12();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 123:
@@ -1862,25 +2001,16 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 275:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 127;
-                            continue;
-                    }
-                    yyn = 307;
+                case 279:
+                    yyn = yys123();
                     continue;
 
                 case 124:
                     yyst[yysp] = 124;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 276:
+                case 280:
                     yyn = yys124();
                     continue;
 
@@ -1893,13 +2023,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 277:
-                    switch (yytok) {
-                        case ID:
-                            yyn = yyr15();
-                            continue;
-                    }
-                    yyn = 307;
+                case 281:
+                    yyn = yys125();
                     continue;
 
                 case 126:
@@ -1911,59 +2036,34 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 278:
-                    switch (yytok) {
-                        case CLASS:
-                        case ENDINPUT:
-                            yyn = yyr5();
-                            continue;
-                    }
-                    yyn = 307;
+                case 282:
+                    yyn = yys126();
                     continue;
 
                 case 127:
                     yyst[yysp] = 127;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 279:
+                case 283:
                     switch (yytok) {
-                        case '(':
-                            yyn = 128;
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ']':
+                            yyn = 142;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 128:
                     yyst[yysp] = 128;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 280:
-                    switch (yytok) {
-                        case BOOLEAN:
-                            yyn = 112;
-                            continue;
-                        case ID:
-                            yyn = 113;
-                            continue;
-                        case INT:
-                            yyn = 114;
-                            continue;
-                        case ')':
-                            yyn = 131;
-                            continue;
-                    }
-                    yyn = 307;
+                case 284:
+                    yyn = yys128();
                     continue;
 
                 case 129:
@@ -1971,16 +2071,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 281:
-                    switch (yytok) {
-                        case ')':
-                            yyn = 132;
-                            continue;
-                        case ',':
-                            yyn = 133;
-                            continue;
-                    }
-                    yyn = 307;
+                case 285:
+                    yyn = yys129();
                     continue;
 
                 case 130:
@@ -1988,49 +2080,26 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 282:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 134;
-                            continue;
-                    }
-                    yyn = 307;
+                case 286:
+                    yyn = yys130();
                     continue;
 
                 case 131:
                     yyst[yysp] = 131;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 283:
-                    switch (yytok) {
-                        case '{':
-                            yyn = 135;
-                            continue;
-                    }
-                    yyn = 307;
+                case 287:
+                    yyn = yys131();
                     continue;
 
                 case 132:
                     yyst[yysp] = 132;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 284:
-                    switch (yytok) {
-                        case '{':
-                            yyn = 136;
-                            continue;
-                    }
-                    yyn = 307;
+                case 288:
+                    yyn = yys132();
                     continue;
 
                 case 133:
@@ -2042,19 +2111,13 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 285:
+                case 289:
                     switch (yytok) {
-                        case BOOLEAN:
-                            yyn = 112;
-                            continue;
-                        case ID:
-                            yyn = 113;
-                            continue;
-                        case INT:
-                            yyn = 114;
+                        case ')':
+                            yyn = 143;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 134:
@@ -2066,14 +2129,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 286:
-                    switch (yytok) {
-                        case ')':
-                        case ',':
-                            yyn = yyr14();
-                            continue;
-                    }
-                    yyn = 307;
+                case 290:
+                    yyn = yys134();
                     continue;
 
                 case 135:
@@ -2085,7 +2142,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 287:
+                case 291:
                     yyn = yys135();
                     continue;
 
@@ -2098,7 +2155,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 288:
+                case 292:
                     yyn = yys136();
                     continue;
 
@@ -2107,21 +2164,20 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 289:
-                    switch (yytok) {
-                        case ID:
-                            yyn = 140;
-                            continue;
-                    }
-                    yyn = 307;
+                case 293:
+                    yyn = yys137();
                     continue;
 
                 case 138:
                     yyst[yysp] = 138;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 290:
+                case 294:
                     yyn = yys138();
                     continue;
 
@@ -2130,7 +2186,7 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 291:
+                case 295:
                     yyn = yys139();
                     continue;
 
@@ -2143,28 +2199,27 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 292:
+                case 296:
                     switch (yytok) {
-                        case ')':
-                        case ',':
+                        case '}':
+                        case PUBLIC:
                             yyn = yyr13();
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 141:
                     yyst[yysp] = 141;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 293:
-                    switch (yytok) {
-                        case RETURN:
-                            yyn = 144;
-                            continue;
-                    }
-                    yyn = 307;
+                case 297:
+                    yyn = yys141();
                     continue;
 
                 case 142:
@@ -2176,50 +2231,59 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 294:
-                    switch (yytok) {
-                        case '=':
-                            yyn = 23;
-                            continue;
-                        case '[':
-                            yyn = 24;
-                            continue;
-                        case ID:
-                            yyn = yyr18();
-                            continue;
-                    }
-                    yyn = 307;
+                case 298:
+                    yyn = yys142();
                     continue;
 
                 case 143:
                     yyst[yysp] = 143;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 295:
-                    switch (yytok) {
-                        case RETURN:
-                            yyn = 145;
-                            continue;
-                    }
-                    yyn = 307;
+                case 299:
+                    yyn = yys143();
                     continue;
 
                 case 144:
                     yyst[yysp] = 144;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 296:
-                    yyn = yys144();
+                case 300:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ']':
+                            yyn = 150;
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 145:
                     yyst[yysp] = 145;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 301:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ';':
+                            yyn = 151;
+                            continue;
+                    }
+                    yyn = 315;
+                    continue;
+
+                case 146:
+                    yyst[yysp] = 146;
                     yysv[yysp] = (token
                                  );
                     yytok = (proximo()
@@ -2227,17 +2291,25 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 297:
-                    yyn = yys145();
-                    continue;
-
-                case 146:
-                    yyst[yysp] = 146;
-                    if (++yysp>=yyst.length) {
-                        yyexpand();
+                case 302:
+                    switch (yytok) {
+                        case ID:
+                            yyn = 59;
+                            continue;
+                        case IF:
+                            yyn = 60;
+                            continue;
+                        case PRINTLN:
+                            yyn = 61;
+                            continue;
+                        case WHILE:
+                            yyn = 62;
+                            continue;
+                        case '{':
+                            yyn = 63;
+                            continue;
                     }
-                case 298:
-                    yyn = yys146();
+                    yyn = 315;
                     continue;
 
                 case 147:
@@ -2245,26 +2317,34 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 299:
-                    yyn = yys147();
+                case 303:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ')':
+                        case ',':
+                            yyn = yyr59();
+                            continue;
+                    }
+                    yyn = 315;
                     continue;
 
                 case 148:
                     yyst[yysp] = 148;
-                    yysv[yysp] = (token
-                                 );
-                    yytok = (proximo()
-                            );
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 300:
+                case 304:
                     switch (yytok) {
-                        case '}':
-                            yyn = 150;
+                        case ')':
+                            yyn = 153;
+                            continue;
+                        case ',':
+                            yyn = 154;
                             continue;
                     }
-                    yyn = 307;
+                    yyn = 315;
                     continue;
 
                 case 149:
@@ -2276,13 +2356,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 301:
-                    switch (yytok) {
-                        case '}':
-                            yyn = 151;
-                            continue;
-                    }
-                    yyn = 307;
+                case 305:
+                    yyn = yys149();
                     continue;
 
                 case 150:
@@ -2294,14 +2369,8 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 302:
-                    switch (yytok) {
-                        case '}':
-                        case PUBLIC:
-                            yyn = yyr11();
-                            continue;
-                    }
-                    yyn = 307;
+                case 306:
+                    yyn = yys150();
                     continue;
 
                 case 151:
@@ -2313,23 +2382,70 @@ public class Parser implements Tokens {
                     if (++yysp>=yyst.length) {
                         yyexpand();
                     }
-                case 303:
-                    switch (yytok) {
-                        case '}':
-                        case PUBLIC:
-                            yyn = yyr12();
-                            continue;
-                    }
-                    yyn = 307;
+                case 307:
+                    yyn = yys151();
                     continue;
 
-                case 304:
+                case 152:
+                    yyst[yysp] = 152;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 308:
+                    yyn = yys152();
+                    continue;
+
+                case 153:
+                    yyst[yysp] = 153;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 309:
+                    yyn = yys153();
+                    continue;
+
+                case 154:
+                    yyst[yysp] = 154;
+                    yysv[yysp] = (token
+                                 );
+                    yytok = (proximo()
+                            );
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 310:
+                    yyn = yys154();
+                    continue;
+
+                case 155:
+                    yyst[yysp] = 155;
+                    if (++yysp>=yyst.length) {
+                        yyexpand();
+                    }
+                case 311:
+                    switch (yytok) {
+                        case AND:
+                            yyn = 99;
+                            continue;
+                        case ')':
+                        case ',':
+                            yyn = yyr58();
+                            continue;
+                    }
+                    yyn = 315;
+                    continue;
+
+                case 312:
                     return true;
-                case 305:
+                case 313:
                     yyerror("stack overflow");
-                case 306:
+                case 314:
                     return false;
-                case 307:
+                case 315:
                     yyerror("syntax error");
                     return false;
             }
@@ -2347,1701 +2463,1557 @@ public class Parser implements Tokens {
         yysv = newyysv;
     }
 
-    private int yys21() {
+    private int yys20() {
         switch (yytok) {
-            case ID:
-                return 17;
-            case IF:
-                return 18;
-            case PRINTLN:
-                return 19;
             case WHILE:
-                return 20;
             case '{':
-                return 21;
-            case '}':
-                return yyr20();
-        }
-        return 307;
-    }
-
-    private int yys23() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys24() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys25() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys26() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys27() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys28() {
-        switch (yytok) {
-            case ID:
-                return 17;
-            case IF:
-                return 18;
-            case PRINTLN:
-                return 19;
-            case WHILE:
-                return 20;
-            case '{':
-                return 21;
-            case '}':
             case RETURN:
-                return yyr20();
+            case INT:
+            case PUBLIC:
+            case PRINTLN:
+            case IF:
+            case '}':
+            case ID:
+            case BOOLEAN:
+                return yyr7();
         }
-        return 307;
-    }
-
-    private int yys31() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case ';':
-                return 56;
-            case '<':
-                return 57;
-        }
-        return 307;
-    }
-
-    private int yys32() {
-        switch (yytok) {
-            case '.':
-                return 58;
-            case '[':
-                return 59;
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
-            case '-':
-            case ',':
-            case AND:
-                return yyr44();
-        }
-        return 307;
-    }
-
-    private int yys33() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
-            case '-':
-            case ',':
-            case AND:
-                return yyr39();
-        }
-        return 307;
+        return 315;
     }
 
     private int yys34() {
         switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '[':
-            case '<':
-            case ';':
-            case '/':
-            case '.':
-            case '-':
-            case ',':
-            case AND:
-                return yyr45();
-        }
-        return 307;
-    }
-
-    private int yys36() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
-            case '-':
-            case ',':
-            case AND:
-                return yyr40();
-        }
-        return 307;
-    }
-
-    private int yys37() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '[':
-            case '<':
-            case ';':
-            case '/':
-            case '.':
-            case '-':
-            case ',':
-            case AND:
-                return yyr46();
-        }
-        return 307;
-    }
-
-    private int yys38() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
-            case '-':
-            case ',':
-            case AND:
-                return yyr38();
-        }
-        return 307;
-    }
-
-    private int yys39() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys40() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys41() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys42() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ']':
-                return 65;
-        }
-        return 307;
-    }
-
-    private int yys43() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ')':
-                return 66;
-        }
-        return 307;
-    }
-
-    private int yys44() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ')':
-                return 67;
-        }
-        return 307;
-    }
-
-    private int yys45() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ')':
-                return 68;
-        }
-        return 307;
-    }
-
-    private int yys47() {
-        switch (yytok) {
             case WHILE:
-            case '}':
             case '{':
             case RETURN:
-            case IF:
+            case INT:
+            case PUBLIC:
             case PRINTLN:
+            case IF:
+            case '}':
             case ID:
-            case ELSE:
-                return yyr21();
+            case BOOLEAN:
+                return yyr9();
         }
-        return 307;
+        return 315;
     }
 
     private int yys49() {
         switch (yytok) {
-            case FALSE:
-                return 33;
+            case WHILE:
+            case '{':
+            case RETURN:
+            case INT:
+            case PRINTLN:
+            case IF:
             case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
+            case BOOLEAN:
+                return yyr8();
         }
-        return 307;
-    }
-
-    private int yys50() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
+        return 315;
     }
 
     private int yys51() {
         switch (yytok) {
-            case FALSE:
-                return 33;
+            case WHILE:
+            case '{':
+            case RETURN:
+            case INT:
+            case PRINTLN:
+            case IF:
             case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
+            case BOOLEAN:
+                return yyr8();
         }
-        return 307;
-    }
-
-    private int yys52() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
+        return 315;
     }
 
     private int yys53() {
         switch (yytok) {
-            case FALSE:
-                return 33;
+            case BOOLEAN:
+                return 21;
             case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
+                return 22;
+            case INT:
+                return 23;
+            case WHILE:
+            case '{':
+            case RETURN:
+            case PRINTLN:
+            case IF:
+                return yyr28();
         }
-        return 307;
-    }
-
-    private int yys54() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
+        return 315;
     }
 
     private int yys55() {
         switch (yytok) {
-            case FALSE:
-                return 33;
+            case BOOLEAN:
+                return 21;
             case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
+                return 22;
+            case INT:
+                return 23;
+            case WHILE:
+            case '{':
+            case RETURN:
+            case PRINTLN:
+            case IF:
+                return yyr28();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys56() {
+    private int yys57() {
+        switch (yytok) {
+            case ID:
+                return 59;
+            case IF:
+                return 60;
+            case PRINTLN:
+                return 61;
+            case WHILE:
+                return 62;
+            case '{':
+                return 63;
+            case RETURN:
+                return 66;
+        }
+        return 315;
+    }
+
+    private int yys63() {
+        switch (yytok) {
+            case WHILE:
+            case '}':
+            case '{':
+            case PRINTLN:
+            case IF:
+            case ID:
+                return yyr28();
+        }
+        return 315;
+    }
+
+    private int yys64() {
+        switch (yytok) {
+            case ID:
+                return 59;
+            case IF:
+                return 60;
+            case PRINTLN:
+                return 61;
+            case WHILE:
+                return 62;
+            case '{':
+                return 63;
+            case RETURN:
+                return 74;
+        }
+        return 315;
+    }
+
+    private int yys65() {
         switch (yytok) {
             case WHILE:
             case '}':
             case '{':
             case RETURN:
-            case IF:
             case PRINTLN:
+            case IF:
             case ID:
-            case ELSE:
-                return yyr25();
+                return yyr27();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys57() {
+    private int yys66() {
         switch (yytok) {
             case FALSE:
-                return 33;
+                return 81;
             case ID:
-                return 34;
+                return 82;
             case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys59() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys62() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
-            case '-':
-            case ',':
-            case AND:
-                return yyr37();
-        }
-        return 307;
-    }
-
-    private int yys63() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ')':
+                return 83;
+            case NULL:
                 return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
         }
-        return 307;
+        return 315;
     }
 
-    private int yys64() {
+    private int yys68() {
         switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
             case '-':
-            case ',':
-            case AND:
-                return yyr36();
+                return 90;
         }
-        return 307;
+        return 315;
+    }
+
+    private int yys69() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys70() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
     }
 
     private int yys71() {
         switch (yytok) {
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
             case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ')':
-            case ']':
-            case ';':
-            case ',':
-            case AND:
-                return yyr35();
+                return 90;
         }
-        return 307;
+        return 315;
     }
 
     private int yys72() {
         switch (yytok) {
-            case '*':
-                return 52;
-            case '+':
-                return 53;
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
             case '-':
-                return 54;
-            case '/':
-                return 55;
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case ',':
-            case AND:
-                return yyr33();
+                return 90;
         }
-        return 307;
+        return 315;
     }
 
     private int yys73() {
         switch (yytok) {
-            case '*':
-                return 52;
-            case '+':
-                return 53;
+            case ID:
+                return 59;
+            case IF:
+                return 60;
+            case PRINTLN:
+                return 61;
+            case WHILE:
+                return 62;
+            case '{':
+                return 63;
+            case '}':
+                return 97;
+        }
+        return 315;
+    }
+
+    private int yys74() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
             case '-':
-                return 54;
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys76() {
+        switch (yytok) {
+            case '*':
+                return 101;
             case '/':
-                return 55;
+                return 102;
             case ')':
-            case NEQ:
+            case NEQUALS:
             case ']':
-            case EQ:
+            case EQUALS:
+            case '<':
+            case ';':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr37();
+        }
+        return 315;
+    }
+
+    private int yys77() {
+        switch (yytok) {
+            case '.':
+                return 103;
+            case '[':
+                return 104;
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr50();
+        }
+        return 315;
+    }
+
+    private int yys78() {
+        switch (yytok) {
+            case '+':
+                return 105;
+            case '-':
+                return 106;
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
             case '<':
             case ';':
             case ',':
             case AND:
                 return yyr34();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys74() {
+    private int yys79() {
         switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
+            case EQUALS:
+                return 107;
+            case NEQUALS:
+                return 108;
             case '<':
+                return 109;
+            case ')':
+            case ']':
             case ';':
-            case '/':
-            case '-':
             case ',':
             case AND:
                 return yyr30();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys75() {
+    private int yys80() {
         switch (yytok) {
             case '*':
-                return 52;
-            case '/':
-                return 55;
-            case '+':
             case ')':
-            case NEQ:
+            case NEQUALS:
             case ']':
-            case EQ:
+            case EQUALS:
             case '<':
             case ';':
+            case '/':
             case '-':
             case ',':
+            case '+':
             case AND:
-                return yyr28();
+                return yyr40();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys76() {
+    private int yys81() {
         switch (yytok) {
             case '*':
-                return 52;
-            case '/':
-                return 55;
-            case '+':
             case ')':
-            case NEQ:
+            case NEQUALS:
             case ']':
-            case EQ:
+            case EQUALS:
             case '<':
             case ';':
+            case '/':
             case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr44();
+        }
+        return 315;
+    }
+
+    private int yys82() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case '[':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '.':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr51();
+        }
+        return 315;
+    }
+
+    private int yys84() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr46();
+        }
+        return 315;
+    }
+
+    private int yys85() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr45();
+        }
+        return 315;
+    }
+
+    private int yys86() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case '[':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '.':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr52();
+        }
+        return 315;
+    }
+
+    private int yys87() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr43();
+        }
+        return 315;
+    }
+
+    private int yys88() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys89() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys90() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys97() {
+        switch (yytok) {
+            case WHILE:
+            case '}':
+            case '{':
+            case RETURN:
+            case PRINTLN:
+            case IF:
+            case ID:
+            case ELSE:
+                return yyr20();
+        }
+        return 315;
+    }
+
+    private int yys99() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys101() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys102() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys104() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys105() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys106() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys107() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys108() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys109() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yys112() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr41();
+        }
+        return 315;
+    }
+
+    private int yys114() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr42();
+        }
+        return 315;
+    }
+
+    private int yys115() {
+        switch (yytok) {
+            case WHILE:
+            case '}':
+            case '{':
+            case RETURN:
+            case PRINTLN:
+            case IF:
+            case ID:
+            case ELSE:
+                return yyr25();
+        }
+        return 315;
+    }
+
+    private int yys121() {
+        switch (yytok) {
+            case EQUALS:
+                return 107;
+            case NEQUALS:
+                return 108;
+            case '<':
+                return 109;
+            case ')':
+            case ']':
+            case ';':
             case ',':
             case AND:
                 return yyr29();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys77() {
+    private int yys123() {
         switch (yytok) {
-            case '+':
             case '*':
             case ')':
-            case NEQ:
+            case NEQUALS:
             case ']':
-            case EQ:
+            case EQUALS:
             case '<':
             case ';':
             case '/':
             case '-':
             case ',':
+            case '+':
             case AND:
-                return yyr31();
+                return yyr38();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys78() {
+    private int yys124() {
         switch (yytok) {
             case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
             case ')':
-            case NEQ:
+            case NEQUALS:
             case ']':
-            case EQ:
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr39();
+        }
+        return 315;
+    }
+
+    private int yys125() {
+        switch (yytok) {
+            case '(':
+                return 141;
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case '[':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '.':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr55();
+        }
+        return 315;
+    }
+
+    private int yys126() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr48();
+        }
+        return 315;
+    }
+
+    private int yys128() {
+        switch (yytok) {
+            case '*':
+                return 101;
+            case '/':
+                return 102;
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr35();
+        }
+        return 315;
+    }
+
+    private int yys129() {
+        switch (yytok) {
+            case '*':
+                return 101;
+            case '/':
+                return 102;
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr36();
+        }
+        return 315;
+    }
+
+    private int yys130() {
+        switch (yytok) {
+            case '+':
+                return 105;
+            case '-':
+                return 106;
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
             case '<':
             case ';':
             case ',':
             case AND:
                 return yyr32();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys79() {
+    private int yys131() {
         switch (yytok) {
+            case '+':
+                return 105;
+            case '-':
+                return 106;
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case ',':
+            case AND:
+                return yyr33();
+        }
+        return 315;
+    }
+
+    private int yys132() {
+        switch (yytok) {
+            case '+':
+                return 105;
+            case '-':
+                return 106;
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case ',':
+            case AND:
+                return yyr31();
+        }
+        return 315;
+    }
+
+    private int yys134() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
             case '(':
+                return 89;
+            case '-':
                 return 90;
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '[':
-            case '<':
-            case ';':
-            case '/':
-            case '.':
-            case '-':
-            case ',':
-            case AND:
-                return yyr49();
         }
-        return 307;
-    }
-
-    private int yys80() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
-            case '-':
-            case ',':
-            case AND:
-                return yyr42();
-        }
-        return 307;
-    }
-
-    private int yys81() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ']':
-                return 91;
-        }
-        return 307;
-    }
-
-    private int yys83() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys84() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '[':
-            case '<':
-            case ';':
-            case '/':
-            case '.':
-            case '-':
-            case ',':
-            case AND:
-                return yyr48();
-        }
-        return 307;
-    }
-
-    private int yys85() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys86() {
-        switch (yytok) {
-            case ELSE:
-                return 95;
-            case WHILE:
-            case '}':
-            case '{':
-            case RETURN:
-            case IF:
-            case PRINTLN:
-            case ID:
-                return yyr22();
-        }
-        return 307;
-    }
-
-    private int yys87() {
-        switch (yytok) {
-            case WHILE:
-            case '}':
-            case '{':
-            case RETURN:
-            case IF:
-            case PRINTLN:
-            case ID:
-            case ELSE:
-                return yyr27();
-        }
-        return 307;
-    }
-
-    private int yys88() {
-        switch (yytok) {
-            case WHILE:
-            case '}':
-            case '{':
-            case RETURN:
-            case IF:
-            case PRINTLN:
-            case ID:
-            case ELSE:
-                return yyr24();
-        }
-        return 307;
-    }
-
-    private int yys90() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-            case ')':
-                return 100;
-        }
-        return 307;
-    }
-
-    private int yys91() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
-            case '-':
-            case ',':
-            case AND:
-                return yyr43();
-        }
-        return 307;
-    }
-
-    private int yys92() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '[':
-            case '<':
-            case ';':
-            case '/':
-            case '.':
-            case '-':
-            case ',':
-            case AND:
-                return yyr47();
-        }
-        return 307;
-    }
-
-    private int yys93() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ']':
-                return 101;
-        }
-        return 307;
-    }
-
-    private int yys94() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ';':
-                return 102;
-        }
-        return 307;
-    }
-
-    private int yys98() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ')':
-            case ',':
-                return yyr53();
-        }
-        return 307;
-    }
-
-    private int yys100() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '[':
-            case '<':
-            case ';':
-            case '/':
-            case '.':
-            case '-':
-            case ',':
-            case AND:
-                return yyr51();
-        }
-        return 307;
-    }
-
-    private int yys101() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '<':
-            case ';':
-            case '/':
-            case '-':
-            case ',':
-            case AND:
-                return yyr41();
-        }
-        return 307;
-    }
-
-    private int yys102() {
-        switch (yytok) {
-            case WHILE:
-            case '}':
-            case '{':
-            case RETURN:
-            case IF:
-            case PRINTLN:
-            case ID:
-            case ELSE:
-                return yyr26();
-        }
-        return 307;
-    }
-
-    private int yys103() {
-        switch (yytok) {
-            case WHILE:
-            case '}':
-            case '{':
-            case RETURN:
-            case IF:
-            case PRINTLN:
-            case ID:
-            case ELSE:
-                return yyr23();
-        }
-        return 307;
-    }
-
-    private int yys106() {
-        switch (yytok) {
-            case '+':
-            case '*':
-            case ')':
-            case NEQ:
-            case ']':
-            case EQ:
-            case '[':
-            case '<':
-            case ';':
-            case '/':
-            case '.':
-            case '-':
-            case ',':
-            case AND:
-                return yyr50();
-        }
-        return 307;
-    }
-
-    private int yys107() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys111() {
-        switch (yytok) {
-            case WHILE:
-            case '}':
-            case '{':
-            case INT:
-            case RETURN:
-            case PUBLIC:
-            case IF:
-            case PRINTLN:
-            case ID:
-            case BOOLEAN:
-                return yyr6();
-        }
-        return 307;
-    }
-
-    private int yys115() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ')':
-            case ',':
-                return yyr52();
-        }
-        return 307;
-    }
-
-    private int yys124() {
-        switch (yytok) {
-            case WHILE:
-            case '}':
-            case '{':
-            case INT:
-            case RETURN:
-            case PUBLIC:
-            case IF:
-            case PRINTLN:
-            case ID:
-            case BOOLEAN:
-                return yyr8();
-        }
-        return 307;
+        return 315;
     }
 
     private int yys135() {
         switch (yytok) {
-            case WHILE:
-            case '{':
-            case INT:
-            case RETURN:
-            case IF:
-            case PRINTLN:
-            case ID:
-            case BOOLEAN:
-                return yyr7();
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case '[':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '.':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr54();
         }
-        return 307;
+        return 315;
     }
 
     private int yys136() {
         switch (yytok) {
-            case WHILE:
-            case '{':
-            case INT:
-            case RETURN:
-            case IF:
-            case PRINTLN:
+            case FALSE:
+                return 81;
             case ID:
-            case BOOLEAN:
-                return yyr7();
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
         }
-        return 307;
+        return 315;
+    }
+
+    private int yys137() {
+        switch (yytok) {
+            case ELSE:
+                return 146;
+            case WHILE:
+            case '}':
+            case '{':
+            case RETURN:
+            case PRINTLN:
+            case IF:
+            case ID:
+                return yyr21();
+        }
+        return 315;
     }
 
     private int yys138() {
         switch (yytok) {
-            case IF:
-                return 18;
-            case PRINTLN:
-                return 19;
             case WHILE:
-                return 20;
+            case '}':
             case '{':
-                return 21;
-            case BOOLEAN:
-                return 112;
-            case INT:
-                return 114;
-            case ID:
-                return 142;
             case RETURN:
-                return yyr20();
+            case PRINTLN:
+            case IF:
+            case ID:
+            case ELSE:
+                return yyr24();
         }
-        return 307;
+        return 315;
     }
 
     private int yys139() {
         switch (yytok) {
-            case IF:
-                return 18;
-            case PRINTLN:
-                return 19;
             case WHILE:
-                return 20;
+            case '}':
             case '{':
-                return 21;
-            case BOOLEAN:
-                return 112;
-            case INT:
-                return 114;
-            case ID:
-                return 142;
             case RETURN:
-                return yyr20();
+            case PRINTLN:
+            case IF:
+            case ID:
+            case ELSE:
+                return yyr23();
         }
-        return 307;
+        return 315;
     }
 
-    private int yys144() {
+    private int yys141() {
         switch (yytok) {
             case FALSE:
-                return 33;
+                return 81;
             case ID:
-                return 34;
+                return 82;
             case NEW:
-                return 35;
+                return 83;
+            case NULL:
+                return 84;
             case NUM:
-                return 36;
+                return 85;
             case THIS:
-                return 37;
+                return 86;
             case TRUE:
-                return 38;
+                return 87;
             case '!':
-                return 39;
+                return 88;
             case '(':
-                return 40;
+                return 89;
             case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys145() {
-        switch (yytok) {
-            case FALSE:
-                return 33;
-            case ID:
-                return 34;
-            case NEW:
-                return 35;
-            case NUM:
-                return 36;
-            case THIS:
-                return 37;
-            case TRUE:
-                return 38;
-            case '!':
-                return 39;
-            case '(':
-                return 40;
-            case '-':
-                return 41;
-        }
-        return 307;
-    }
-
-    private int yys146() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ';':
-                return 148;
-        }
-        return 307;
-    }
-
-    private int yys147() {
-        switch (yytok) {
-            case AND:
-                return 49;
-            case EQ:
-                return 50;
-            case NEQ:
-                return 51;
-            case '*':
-                return 52;
-            case '+':
-                return 53;
-            case '-':
-                return 54;
-            case '/':
-                return 55;
-            case '<':
-                return 57;
-            case ';':
+                return 90;
+            case ')':
                 return 149;
         }
-        return 307;
+        return 315;
     }
 
-    private int yyr1() { // prog : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}' classes
-        { saida = new Prog(((Token)yysv[yysp-17]).texto, ((Token)yysv[yysp-7]).texto, ((Cmd)yysv[yysp-4]), ((java.util.List)yysv[yysp-1])); yyrv = saida; }
-        yysv[yysp-=18] = yyrv;
+    private int yys142() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr49();
+        }
+        return 315;
+    }
+
+    private int yys143() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case '[':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '.':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr53();
+        }
+        return 315;
+    }
+
+    private int yys149() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case '[':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '.':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr57();
+        }
+        return 315;
+    }
+
+    private int yys150() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr47();
+        }
+        return 315;
+    }
+
+    private int yys151() {
+        switch (yytok) {
+            case WHILE:
+            case '}':
+            case '{':
+            case RETURN:
+            case PRINTLN:
+            case IF:
+            case ID:
+            case ELSE:
+                return yyr26();
+        }
+        return 315;
+    }
+
+    private int yys152() {
+        switch (yytok) {
+            case WHILE:
+            case '}':
+            case '{':
+            case RETURN:
+            case PRINTLN:
+            case IF:
+            case ID:
+            case ELSE:
+                return yyr22();
+        }
+        return 315;
+    }
+
+    private int yys153() {
+        switch (yytok) {
+            case '*':
+            case ')':
+            case NEQUALS:
+            case ']':
+            case '[':
+            case EQUALS:
+            case '<':
+            case ';':
+            case '/':
+            case '.':
+            case '-':
+            case ',':
+            case '+':
+            case AND:
+                return yyr56();
+        }
+        return 315;
+    }
+
+    private int yys154() {
+        switch (yytok) {
+            case FALSE:
+                return 81;
+            case ID:
+                return 82;
+            case NEW:
+                return 83;
+            case NULL:
+                return 84;
+            case NUM:
+                return 85;
+            case THIS:
+                return 86;
+            case TRUE:
+                return 87;
+            case '!':
+                return 88;
+            case '(':
+                return 89;
+            case '-':
+                return 90;
+        }
+        return 315;
+    }
+
+    private int yyr1() { // prog : main classes
+        { saida = new Prog(((Main)yysv[yysp-2]), ((java.util.List)yysv[yysp-1])); yyrv = saida; }
+        yysv[yysp-=2] = yyrv;
         return 1;
     }
 
-    private int yyr2() { // classes : classes classe
-        { ((java.util.List)yysv[yysp-2]).add(yysv[yysp-1]); yyrv = ((java.util.List)yysv[yysp-2]); }
-        yysv[yysp-=2] = yyrv;
-        return 48;
+    private int yyr5() { // classe : CLASS ID EXTENDS ID '{' vars metodos '}'
+        { yyrv = new Classe(((Token)yysv[yysp-7]).texto, ((Token)yysv[yysp-5]).texto, yysv[yysp-4], ((java.util.List)yysv[yysp-3])); }
+        yysv[yysp-=8] = yyrv;
+        return 6;
     }
 
-    private int yyr3() { // classes : /* empty */
+    private int yyr6() { // classe : CLASS ID '{' vars metodos '}'
+        { yyrv = new Classe(((Token)yysv[yysp-5]).texto, ((java.util.List)yysv[yysp-2]), yysv[yysp-1]); }
+        yysv[yysp-=6] = yyrv;
+        return 6;
+    }
+
+    private int yyr3() { // classes : classes classe
+        { ((java.util.List)yysv[yysp-2]).add(0, ((Classe)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-2]); }
+        yysv[yysp-=2] = yyrv;
+        return 4;
+    }
+
+    private int yyr4() { // classes : /* empty */
         { yyrv = new java.util.ArrayList<Classe>(); }
         yysv[yysp-=0] = yyrv;
-        return 48;
+        return 4;
     }
 
-    private int yyr21() { // cmd : '{' cmds '}'
+    private int yyr20() { // cmd : '{' cmds '}'
         { yyrv = new Bloco(((java.util.List)yysv[yysp-2])); }
         yysv[yysp-=3] = yyrv;
         return yypcmd();
     }
 
-    private int yyr22() { // cmd : IF '(' exp ')' cmd
+    private int yyr21() { // cmd : IF '(' exp ')' cmd
         { yyrv = new If(((Exp)yysv[yysp-3]), ((Cmd)yysv[yysp-1]), ((Token)yysv[yysp-5]).lin); }
         yysv[yysp-=5] = yyrv;
         return yypcmd();
     }
 
-    private int yyr23() { // cmd : IF '(' exp ')' cmd ELSE cmd
+    private int yyr22() { // cmd : IF '(' exp ')' cmd ELSE cmd
         { yyrv = new If(((Exp)yysv[yysp-5]), ((Cmd)yysv[yysp-3]), ((Cmd)yysv[yysp-1]), ((Token)yysv[yysp-7]).lin); }
         yysv[yysp-=7] = yyrv;
         return yypcmd();
     }
 
-    private int yyr24() { // cmd : WHILE '(' exp ')' cmd
+    private int yyr23() { // cmd : WHILE '(' exp ')' cmd
         { yyrv = new While(((Exp)yysv[yysp-3]), ((Cmd)yysv[yysp-1]), ((Token)yysv[yysp-5]).lin); }
         yysv[yysp-=5] = yyrv;
         return yypcmd();
     }
 
-    private int yyr25() { // cmd : ID '=' exp ';'
-        { yyrv = new Atrib(((Token)yysv[yysp-4]).texto, ((Exp)yysv[yysp-2]), ((Token)yysv[yysp-3]).lin); }
-        yysv[yysp-=4] = yyrv;
-        return yypcmd();
-    }
-
-    private int yyr26() { // cmd : ID '[' exp ']' '=' exp ';'
-        { yyrv = new AtribVetor(((Token)yysv[yysp-7]).texto, ((Exp)yysv[yysp-5]), ((Exp)yysv[yysp-2]), ((Token)yysv[yysp-3]).lin); }
-        yysv[yysp-=7] = yyrv;
-        return yypcmd();
-    }
-
-    private int yyr27() { // cmd : PRINTLN '(' exp ')' ';'
+    private int yyr24() { // cmd : PRINTLN '(' exp ')' ';'
         { yyrv = new Println(((Exp)yysv[yysp-3]), ((Token)yysv[yysp-5]).lin); }
         yysv[yysp-=5] = yyrv;
         return yypcmd();
     }
 
+    private int yyr25() { // cmd : ID '=' exp ';'
+        { yyrv = new Atrib(((Token)yysv[yysp-4]).texto, ((Exp)yysv[yysp-2]), yysv[yysp-3].lin); }
+        yysv[yysp-=4] = yyrv;
+        return yypcmd();
+    }
+
+    private int yyr26() { // cmd : ID '[' exp ']' '=' exp ';'
+        { yyrv = new AtribVetor(((Token)yysv[yysp-7]).texto, ((Exp)yysv[yysp-5]), ((Exp)yysv[yysp-2]), yysv[yysp-3].lin); }
+        yysv[yysp-=7] = yyrv;
+        return yypcmd();
+    }
+
     private int yypcmd() {
         switch (yyst[yysp-1]) {
-            case 95: return 103;
-            case 68: return 88;
-            case 66: return 86;
-            case 15: return 16;
-            default: return 28;
+            case 146: return 152;
+            case 119: return 139;
+            case 117: return 137;
+            case 54: return 58;
+            default: return 65;
         }
     }
 
-    private int yyr19() { // cmds : cmd cmds
-        { ((java.util.List)yysv[yysp-1]).add(0, ((Cmd)yysv[yysp-2])); yyrv = ((java.util.List)yysv[yysp-1]); }
+    private int yyr27() { // cmds : cmds cmd
+        { ((java.util.List)yysv[yysp-2]).add(((Cmd)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-2]); }
         yysv[yysp-=2] = yyrv;
         return yypcmds();
     }
 
-    private int yyr20() { // cmds : /* empty */
+    private int yyr28() { // cmds : /* empty */
         { yyrv = new java.util.ArrayList<Cmd>(); }
         yysv[yysp-=0] = yyrv;
         return yypcmds();
@@ -4049,174 +4021,79 @@ public class Parser implements Tokens {
 
     private int yypcmds() {
         switch (yyst[yysp-1]) {
-            case 138: return 141;
-            case 28: return 46;
-            case 21: return 29;
-            default: return 143;
+            case 55: return 64;
+            case 53: return 57;
+            default: return 73;
         }
     }
 
-    private int yyr28() { // exp : exp '+' exp
-        { yyrv = new Soma(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+    private int yyr29() { // exp : exp AND rexp
+        { yyrv = new And(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
         yysv[yysp-=3] = yyrv;
         return yypexp();
     }
 
-    private int yyr29() { // exp : exp '-' exp
-        { yyrv = new Sub(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=3] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr30() { // exp : exp '*' exp
-        { yyrv = new Mult(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=3] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr31() { // exp : exp '/' exp
-        { yyrv = new Div(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=3] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr32() { // exp : exp '<' exp
-        { yyrv = new Menor(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=3] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr33() { // exp : exp EQ exp
-        { yyrv = new Igual(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=3] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr34() { // exp : exp NEQ exp
-        { yyrv = new Dif(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=3] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr35() { // exp : exp AND exp
-        { yyrv = new ELog(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=3] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr36() { // exp : '-' exp
-        { yyrv = new Neg(((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=2] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr37() { // exp : '!' exp
-        { yyrv = new Nao(((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=2] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr38() { // exp : TRUE
-        { yyrv = new True(); }
-        yysv[yysp-=1] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr39() { // exp : FALSE
-        { yyrv = new False(); }
-        yysv[yysp-=1] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr40() { // exp : NUM
-        { yyrv = new Num(((Token)yysv[yysp-1]).texto); }
-        yysv[yysp-=1] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr41() { // exp : NEW INT '[' exp ']'
-        { yyrv = new Vetor(((Exp)yysv[yysp-2]), ((Token)yysv[yysp-5]).lin); }
-        yysv[yysp-=5] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr42() { // exp : pexp '.' LENGTH
-        { yyrv = new Length(((Exp)yysv[yysp-3]), ((Token)yysv[yysp-2]).lin); }
-        yysv[yysp-=3] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr43() { // exp : pexp '[' exp ']'
-        { yyrv = new Indexa(((Exp)yysv[yysp-4]), ((Exp)yysv[yysp-2]), ((Token)yysv[yysp-3]).lin); }
-        yysv[yysp-=4] = yyrv;
-        return yypexp();
-    }
-
-    private int yyr44() { // exp : pexp
+    private int yyr30() { // exp : rexp
         yysp -= 1;
         return yypexp();
     }
 
     private int yypexp() {
         switch (yyst[yysp-1]) {
-            case 144: return 146;
-            case 107: return 115;
-            case 90: return 98;
-            case 85: return 94;
-            case 83: return 93;
-            case 59: return 81;
-            case 57: return 78;
-            case 55: return 77;
-            case 54: return 76;
-            case 53: return 75;
-            case 52: return 74;
-            case 51: return 73;
-            case 50: return 72;
-            case 49: return 71;
-            case 41: return 64;
-            case 40: return 63;
-            case 39: return 62;
-            case 27: return 45;
-            case 26: return 44;
-            case 25: return 43;
-            case 24: return 42;
-            case 23: return 31;
-            default: return 147;
+            case 141: return 147;
+            case 136: return 145;
+            case 134: return 144;
+            case 104: return 127;
+            case 89: return 113;
+            case 74: return 98;
+            case 72: return 96;
+            case 71: return 95;
+            case 70: return 94;
+            case 69: return 93;
+            case 68: return 92;
+            case 66: return 75;
+            default: return 155;
         }
     }
 
-    private int yyr52() { // exps : exps ',' exp
+    private int yyr58() { // exps : exps ',' exp
         { ((java.util.List)yysv[yysp-3]).add(((Exp)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-3]); }
         yysv[yysp-=3] = yyrv;
-        return 99;
+        return 148;
     }
 
-    private int yyr53() { // exps : exp
+    private int yyr59() { // exps : exp
         { java.util.List<Exp> l = new java.util.ArrayList<Exp>();
                         l.add(((Exp)yysv[yysp-1])); yyrv = l; }
         yysv[yysp-=1] = yyrv;
-        return 99;
+        return 148;
     }
 
-    private int yyr11() { // metodo : PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp ';' '}'
-        { yyrv = new Metodo(((String)yysv[yysp-11]), ((Token)yysv[yysp-10]).texto, new java.util.ArrayList<Var>(), ((java.util.List)yysv[yysp-6]), ((java.util.List)yysv[yysp-5]), ((Exp)yysv[yysp-3]), ((Token)yysv[yysp-10]).lin); }
+    private int yyr2() { // main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'
+        { yyrv = new Main(((Token)yysv[yysp-16]).texto, ((Token)yysv[yysp-6]).texto, ((Cmd)yysv[yysp-3])); }
+        yysv[yysp-=17] = yyrv;
+        return 2;
+    }
+
+    private int yyr12() { // metodo : PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp ';' '}'
+        { yyrv = new Metodo(((String)yysv[yysp-11]), ((Token)yysv[yysp-10]).texto, new java.util.ArrayList<Var>(), ((java.util.List)yysv[yysp-6]), ((java.util.List)yysv[yysp-5]), ((Exp)yysv[yysp-3])); }
         yysv[yysp-=12] = yyrv;
-        return 117;
+        return 26;
     }
 
-    private int yyr12() { // metodo : PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp ';' '}'
-        { yyrv = new Metodo(((String)yysv[yysp-12]), ((Token)yysv[yysp-11]).texto, ((java.util.List)yysv[yysp-9]), ((java.util.List)yysv[yysp-6]), ((java.util.List)yysv[yysp-5]), ((Exp)yysv[yysp-3]), ((Token)yysv[yysp-11]).lin); }
+    private int yyr13() { // metodo : PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp ';' '}'
+        { yyrv = new Metodo(((String)yysv[yysp-12]), ((Token)yysv[yysp-11]).texto, ((java.util.List)yysv[yysp-9]), ((java.util.List)yysv[yysp-6]), ((java.util.List)yysv[yysp-5]), ((Exp)yysv[yysp-3])); }
         yysv[yysp-=13] = yyrv;
-        return 117;
+        return 26;
     }
 
-    private int yyr9() { // metodos : metodos metodo
-        { ((java.util.List)yysv[yysp-2]).add(yysv[yysp-1]); yyrv = ((java.util.List)yysv[yysp-2]); }
+    private int yyr10() { // metodos : metodos metodo
+        { ((java.util.List)yysv[yysp-2]).add(0, ((Metodo)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-2]); }
         yysv[yysp-=2] = yyrv;
         return yypmetodos();
     }
 
-    private int yyr10() { // metodos : /* empty */
+    private int yyr11() { // metodos : /* empty */
         { yyrv = new java.util.ArrayList<Metodo>(); }
         yysv[yysp-=0] = yyrv;
         return yypmetodos();
@@ -4224,97 +4101,235 @@ public class Parser implements Tokens {
 
     private int yypmetodos() {
         switch (yyst[yysp-1]) {
-            case 105: return 109;
-            default: return 122;
+            case 15: return 18;
+            default: return 32;
         }
     }
 
-    private int yyr13() { // params : params ',' tipo ID
-        { ((java.util.List)yysv[yysp-4]).add(new Var(((String)yysv[yysp-2]), ((Token)yysv[yysp-1]).texto, ((Token)yysv[yysp-1]).lin)); yyrv = ((java.util.List)yysv[yysp-4]); }
-        yysv[yysp-=4] = yyrv;
-        return 129;
+    private int yyr38() { // mexp : mexp '*' sexp
+        { yyrv = new Mult(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=3] = yyrv;
+        return yypmexp();
     }
 
-    private int yyr14() { // params : tipo ID
+    private int yyr39() { // mexp : mexp '/' sexp
+        { yyrv = new Div(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=3] = yyrv;
+        return yypmexp();
+    }
+
+    private int yyr40() { // mexp : sexp
+        yysp -= 1;
+        return yypmexp();
+    }
+
+    private int yypmexp() {
+        switch (yyst[yysp-1]) {
+            case 106: return 129;
+            case 105: return 128;
+            default: return 76;
+        }
+    }
+
+    private int yyr14() { // params : params ',' tipo ID
+        { ((java.util.List)yysv[yysp-4]).add(new Var(((String)yysv[yysp-2]), ((Token)yysv[yysp-1]).texto, ((Token)yysv[yysp-1]).lin)); yyrv = ((java.util.List)yysv[yysp-4]); }
+        yysv[yysp-=4] = yyrv;
+        return 42;
+    }
+
+    private int yyr15() { // params : tipo ID
         { java.util.List<Var> l = new java.util.ArrayList<Var>();
                                 l.add(new Var(((String)yysv[yysp-2]), ((Token)yysv[yysp-1]).texto, ((Token)yysv[yysp-1]).lin)); yyrv = l; }
         yysv[yysp-=2] = yyrv;
-        return 129;
+        return 42;
     }
 
-    private int yyr45() { // pexp : ID
+    private int yyr51() { // pexp : ID
         { yyrv = new Id(((Token)yysv[yysp-1]).texto, ((Token)yysv[yysp-1]).lin); }
         yysv[yysp-=1] = yyrv;
-        return 32;
+        return 77;
     }
 
-    private int yyr46() { // pexp : THIS
+    private int yyr52() { // pexp : THIS
         { yyrv = new This(((Token)yysv[yysp-1]).lin); }
         yysv[yysp-=1] = yyrv;
-        return 32;
+        return 77;
     }
 
-    private int yyr47() { // pexp : NEW ID '(' ')'
+    private int yyr53() { // pexp : NEW ID '(' ')'
         { yyrv = new New(((Token)yysv[yysp-3]).texto, ((Token)yysv[yysp-4]).lin); }
         yysv[yysp-=4] = yyrv;
-        return 32;
+        return 77;
     }
 
-    private int yyr48() { // pexp : '(' exp ')'
+    private int yyr54() { // pexp : '(' exp ')'
         { yyrv = ((Exp)yysv[yysp-2]); }
         yysv[yysp-=3] = yyrv;
-        return 32;
+        return 77;
     }
 
-    private int yyr49() { // pexp : pexp '.' ID
+    private int yyr55() { // pexp : pexp '.' ID
         { yyrv = new Campo(((Exp)yysv[yysp-3]), ((Token)yysv[yysp-1]).texto, ((Token)yysv[yysp-2]).lin); }
         yysv[yysp-=3] = yyrv;
-        return 32;
+        return 77;
     }
 
-    private int yyr50() { // pexp : pexp '.' ID '(' exps ')'
+    private int yyr56() { // pexp : pexp '.' ID '(' exps ')'
         { yyrv = new Chamada(((Exp)yysv[yysp-6]), ((Token)yysv[yysp-4]).texto, ((java.util.List)yysv[yysp-2]), ((Token)yysv[yysp-5]).lin); }
         yysv[yysp-=6] = yyrv;
-        return 32;
+        return 77;
     }
 
-    private int yyr51() { // pexp : pexp '.' ID '(' ')'
+    private int yyr57() { // pexp : pexp '.' ID '(' ')'
         { yyrv = new Chamada(((Exp)yysv[yysp-5]), ((Token)yysv[yysp-3]).texto, new java.util.ArrayList<Exp>(), ((Token)yysv[yysp-4]).lin); }
         yysv[yysp-=5] = yyrv;
-        return 32;
+        return 77;
     }
 
-    private int yyr4() { // classe : CLASS ID '{' vars metodos '}'
-        { yyrv = new Classe(((Token)yysv[yysp-5]).texto, ((java.util.List)yysv[yysp-3]), ((java.util.List)yysv[yysp-2]), ((Token)yysv[yysp-5]).lin); }
-        yysv[yysp-=6] = yyrv;
-        return 69;
+    private int yyr35() { // aexp : aexp '+' mexp
+        { yyrv = new Soma(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=3] = yyrv;
+        return yypaexp();
     }
 
-    private int yyr5() { // classe : CLASS ID EXTENDS ID '{' vars metodos '}'
-        { yyrv = new Classe(((Token)yysv[yysp-7]).texto, ((Token)yysv[yysp-5]).texto, ((java.util.List)yysv[yysp-3]), ((java.util.List)yysv[yysp-2]), ((Token)yysv[yysp-7]).lin); }
-        yysv[yysp-=8] = yyrv;
-        return 69;
+    private int yyr36() { // aexp : aexp '-' mexp
+        { yyrv = new Sub(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=3] = yyrv;
+        return yypaexp();
     }
 
-    private int yyr15() { // tipo : INT '[' ']'
+    private int yyr37() { // aexp : mexp
+        yysp -= 1;
+        return yypaexp();
+    }
+
+    private int yypaexp() {
+        switch (yyst[yysp-1]) {
+            case 109: return 132;
+            case 108: return 131;
+            case 107: return 130;
+            default: return 78;
+        }
+    }
+
+    private int yyr31() { // rexp : rexp '<' aexp
+        { yyrv = new MenorQue(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=3] = yyrv;
+        return yyprexp();
+    }
+
+    private int yyr32() { // rexp : rexp EQUALS aexp
+        { yyrv = new Igual(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=3] = yyrv;
+        return yyprexp();
+    }
+
+    private int yyr33() { // rexp : rexp NEQUALS aexp
+        { yyrv = new Diferente(((Exp)yysv[yysp-3]), ((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=3] = yyrv;
+        return yyprexp();
+    }
+
+    private int yyr34() { // rexp : aexp
+        yysp -= 1;
+        return yyprexp();
+    }
+
+    private int yyprexp() {
+        switch (yyst[yysp-1]) {
+            case 99: return 121;
+            default: return 79;
+        }
+    }
+
+    private int yyr41() { // sexp : '!' sexp
+        { yyrv = new Nao(((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=2] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr42() { // sexp : '-' sexp
+        { yyrv = new Neg(((Exp)yysv[yysp-1]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=2] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr43() { // sexp : TRUE
+        { yyrv = new True(); }
+        yysv[yysp-=1] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr44() { // sexp : FALSE
+        { yyrv = new False(); }
+        yysv[yysp-=1] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr45() { // sexp : NUM
+        { yyrv = new Num(((Token)yysv[yysp-1]).texto); }
+        yysv[yysp-=1] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr46() { // sexp : NULL
+        { yyrv = new Null(); }
+        yysv[yysp-=1] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr47() { // sexp : NEW INT '[' exp ']'
+        { yyrv = new Vetor(((Exp)yysv[yysp-2]), ((Token)yysv[yysp-5]).lin); }
+        yysv[yysp-=5] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr48() { // sexp : pexp '.' LENGTH
+        { yyrv = new Length(((Exp)yysv[yysp-3]), ((Token)yysv[yysp-2]).lin); }
+        yysv[yysp-=3] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr49() { // sexp : pexp '[' exp ']'
+        { yyrv = new Indexa(((Exp)yysv[yysp-4]), ((Exp)yysv[yysp-2]), ((Token)yysv[yysp-3]).lin); }
+        yysv[yysp-=4] = yyrv;
+        return yypsexp();
+    }
+
+    private int yyr50() { // sexp : pexp
+        yysp -= 1;
+        return yypsexp();
+    }
+
+    private int yypsexp() {
+        switch (yyst[yysp-1]) {
+            case 102: return 124;
+            case 101: return 123;
+            case 90: return 114;
+            case 88: return 112;
+            default: return 80;
+        }
+    }
+
+    private int yyr16() { // tipo : INT '[' ']'
         { yyrv = "int[]"; }
         yysv[yysp-=3] = yyrv;
         return yyptipo();
     }
 
-    private int yyr16() { // tipo : BOOLEAN
+    private int yyr17() { // tipo : BOOLEAN
         { yyrv = "boolean"; }
         yysv[yysp-=1] = yyrv;
         return yyptipo();
     }
 
-    private int yyr17() { // tipo : INT
+    private int yyr18() { // tipo : INT
         { yyrv = "int"; }
         yysv[yysp-=1] = yyrv;
         return yyptipo();
     }
 
-    private int yyr18() { // tipo : ID
+    private int yyr19() { // tipo : ID
         { yyrv = ((Token)yysv[yysp-1]).texto; }
         yysv[yysp-=1] = yyrv;
         return yyptipo();
@@ -4322,26 +4337,26 @@ public class Parser implements Tokens {
 
     private int yyptipo() {
         switch (yyst[yysp-1]) {
-            case 133: return 137;
-            case 128: return 130;
-            case 118: return 123;
-            default: return 110;
+            case 47: return 52;
+            case 40: return 43;
+            case 27: return 33;
+            default: return 19;
         }
     }
 
-    private int yyr8() { // var : tipo ID ';'
+    private int yyr9() { // var : tipo ID ';'
         { yyrv = new Var(((String)yysv[yysp-3]), ((Token)yysv[yysp-2]).texto, ((Token)yysv[yysp-2]).lin); }
         yysv[yysp-=3] = yyrv;
-        return 111;
+        return 20;
     }
 
-    private int yyr6() { // vars : vars var
+    private int yyr7() { // vars : vars var
         { ((java.util.List)yysv[yysp-2]).add(((Var)yysv[yysp-1])); yyrv = ((java.util.List)yysv[yysp-2]); }
         yysv[yysp-=2] = yyrv;
         return yypvars();
     }
 
-    private int yyr7() { // vars : /* empty */
+    private int yyr8() { // vars : /* empty */
         { yyrv = new java.util.ArrayList<Var>(); }
         yysv[yysp-=0] = yyrv;
         return yypvars();
@@ -4349,10 +4364,10 @@ public class Parser implements Tokens {
 
     private int yypvars() {
         switch (yyst[yysp-1]) {
-            case 135: return 138;
-            case 108: return 116;
-            case 97: return 105;
-            default: return 139;
+            case 49: return 53;
+            case 17: return 25;
+            case 12: return 15;
+            default: return 55;
         }
     }
 

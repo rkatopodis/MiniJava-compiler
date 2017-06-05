@@ -1,0 +1,2108 @@
+<html>
+<title>Generated machine for Parser</title>
+<body>
+<h1>Generated machine for Parser</h1>
+<pre>
+// Output created by jacc on Sun Jun 04 22:38:34 BRT 2017
+
+<hr><a name="st0"><b>state 0 (entry on prog)</b></a>
+    $accept : _prog $end
+
+    CLASS <a href="#st3">shift 3</a>
+    . error
+
+    prog <a href="#st1">goto 1</a>
+    main <a href="#st2">goto 2</a>
+
+<hr><a name="st1"><b>state 1 (entry on prog)</b></a>
+    $accept : prog_$end
+
+    $end accept
+    . error
+
+<hr><a name="st2"><b>state 2 (entry on main)</b></a>
+    prog : main_classes    (1)
+    classes : _    (4)
+
+    CLASS reduce 4
+    $end reduce 4
+    . error
+
+    classes <a href="#st4">goto 4</a>
+
+<hr><a name="st3"><b>state 3 (entry on CLASS)</b></a>
+    main : CLASS_ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    ID <a href="#st5">shift 5</a>
+    . error
+
+<hr><a name="st4"><b>state 4 (entry on classes)</b></a>
+    prog : main classes_    (1)
+    classes : classes_classe    (3)
+
+    CLASS <a href="#st7">shift 7</a>
+    $end reduce 1
+    . error
+
+    classe <a href="#st6">goto 6</a>
+
+<hr><a name="st5"><b>state 5 (entry on ID)</b></a>
+    main : CLASS ID_'{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    '{' <a href="#st8">shift 8</a>
+    . error
+
+<hr><a name="st6"><b>state 6 (entry on classe)</b></a>
+    classes : classes classe_    (3)
+
+    CLASS reduce 3
+    $end reduce 3
+    . error
+
+<hr><a name="st7"><b>state 7 (entry on CLASS)</b></a>
+    classe : CLASS_ID EXTENDS ID '{' vars metodos '}'    (5)
+    classe : CLASS_ID '{' vars metodos '}'    (6)
+
+    ID <a href="#st9">shift 9</a>
+    . error
+
+<hr><a name="st8"><b>state 8 (entry on '{')</b></a>
+    main : CLASS ID '{'_PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    PUBLIC <a href="#st10">shift 10</a>
+    . error
+
+<hr><a name="st9"><b>state 9 (entry on ID)</b></a>
+    classe : CLASS ID_EXTENDS ID '{' vars metodos '}'    (5)
+    classe : CLASS ID_'{' vars metodos '}'    (6)
+
+    EXTENDS <a href="#st11">shift 11</a>
+    '{' <a href="#st12">shift 12</a>
+    . error
+
+<hr><a name="st10"><b>state 10 (entry on PUBLIC)</b></a>
+    main : CLASS ID '{' PUBLIC_STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    STATIC <a href="#st13">shift 13</a>
+    . error
+
+<hr><a name="st11"><b>state 11 (entry on EXTENDS)</b></a>
+    classe : CLASS ID EXTENDS_ID '{' vars metodos '}'    (5)
+
+    ID <a href="#st14">shift 14</a>
+    . error
+
+<hr><a name="st12"><b>state 12 (entry on '{')</b></a>
+    classe : CLASS ID '{'_vars metodos '}'    (6)
+    vars : _    (8)
+
+    '}' reduce 8
+    PUBLIC reduce 8
+    INT reduce 8
+    ID reduce 8
+    BOOLEAN reduce 8
+    . error
+
+    vars <a href="#st15">goto 15</a>
+
+<hr><a name="st13"><b>state 13 (entry on STATIC)</b></a>
+    main : CLASS ID '{' PUBLIC STATIC_VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    VOID <a href="#st16">shift 16</a>
+    . error
+
+<hr><a name="st14"><b>state 14 (entry on ID)</b></a>
+    classe : CLASS ID EXTENDS ID_'{' vars metodos '}'    (5)
+
+    '{' <a href="#st17">shift 17</a>
+    . error
+
+<hr><a name="st15"><b>state 15 (entry on vars)</b></a>
+    metodos : _    (11)
+    classe : CLASS ID '{' vars_metodos '}'    (6)
+    vars : vars_var    (7)
+
+    BOOLEAN <a href="#st21">shift 21</a>
+    ID <a href="#st22">shift 22</a>
+    INT <a href="#st23">shift 23</a>
+    '}' reduce 11
+    PUBLIC reduce 11
+    . error
+
+    metodos <a href="#st18">goto 18</a>
+    tipo <a href="#st19">goto 19</a>
+    var <a href="#st20">goto 20</a>
+
+<hr><a name="st16"><b>state 16 (entry on VOID)</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID_MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    MAIN <a href="#st24">shift 24</a>
+    . error
+
+<hr><a name="st17"><b>state 17 (entry on '{')</b></a>
+    classe : CLASS ID EXTENDS ID '{'_vars metodos '}'    (5)
+    vars : _    (8)
+
+    '}' reduce 8
+    PUBLIC reduce 8
+    INT reduce 8
+    ID reduce 8
+    BOOLEAN reduce 8
+    . error
+
+    vars <a href="#st25">goto 25</a>
+
+<hr><a name="st18"><b>state 18 (entry on metodos)</b></a>
+    metodos : metodos_metodo    (10)
+    classe : CLASS ID '{' vars metodos_'}'    (6)
+
+    PUBLIC <a href="#st27">shift 27</a>
+    '}' <a href="#st28">shift 28</a>
+    . error
+
+    metodo <a href="#st26">goto 26</a>
+
+<hr><a name="st19"><b>state 19 (entry on tipo)</b></a>
+    var : tipo_ID ';'    (9)
+
+    ID <a href="#st29">shift 29</a>
+    . error
+
+<hr><a name="st20"><b>state 20 (entry on var)</b></a>
+    vars : vars var_    (7)
+
+    WHILE reduce 7
+    '}' reduce 7
+    RETURN reduce 7
+    PUBLIC reduce 7
+    INT reduce 7
+    PRINTLN reduce 7
+    '{' reduce 7
+    IF reduce 7
+    ID reduce 7
+    BOOLEAN reduce 7
+    . error
+
+<hr><a name="st21"><b>state 21 (entry on BOOLEAN)</b></a>
+    tipo : BOOLEAN_    (17)
+
+    ID reduce 17
+    . error
+
+<hr><a name="st22"><b>state 22 (entry on ID)</b></a>
+    tipo : ID_    (19)
+
+    ID reduce 19
+    . error
+
+<hr><a name="st23"><b>state 23 (entry on INT)</b></a>
+    tipo : INT_'[' ']'    (16)
+    tipo : INT_    (18)
+
+    '[' <a href="#st30">shift 30</a>
+    ID reduce 18
+    . error
+
+<hr><a name="st24"><b>state 24 (entry on MAIN)</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN_'(' STRING '[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    '(' <a href="#st31">shift 31</a>
+    . error
+
+<hr><a name="st25"><b>state 25 (entry on vars)</b></a>
+    metodos : _    (11)
+    classe : CLASS ID EXTENDS ID '{' vars_metodos '}'    (5)
+    vars : vars_var    (7)
+
+    BOOLEAN <a href="#st21">shift 21</a>
+    ID <a href="#st22">shift 22</a>
+    INT <a href="#st23">shift 23</a>
+    '}' reduce 11
+    PUBLIC reduce 11
+    . error
+
+    metodos <a href="#st32">goto 32</a>
+    tipo <a href="#st19">goto 19</a>
+    var <a href="#st20">goto 20</a>
+
+<hr><a name="st26"><b>state 26 (entry on metodo)</b></a>
+    metodos : metodos metodo_    (10)
+
+    '}' reduce 10
+    PUBLIC reduce 10
+    . error
+
+<hr><a name="st27"><b>state 27 (entry on PUBLIC)</b></a>
+    metodo : PUBLIC_tipo ID '(' ')' '{' vars cmds RETURN exp ';' '}'    (12)
+    metodo : PUBLIC_tipo ID '(' params ')' '{' vars cmds RETURN exp ';' '}'    (13)
+
+    BOOLEAN <a href="#st21">shift 21</a>
+    ID <a href="#st22">shift 22</a>
+    INT <a href="#st23">shift 23</a>
+    . error
+
+    tipo <a href="#st33">goto 33</a>
+
+<hr><a name="st28"><b>state 28 (entry on '}')</b></a>
+    classe : CLASS ID '{' vars metodos '}'_    (6)
+
+    CLASS reduce 6
+    $end reduce 6
+    . error
+
+<hr><a name="st29"><b>state 29 (entry on ID)</b></a>
+    var : tipo ID_';'    (9)
+
+    ';' <a href="#st34">shift 34</a>
+    . error
+
+<hr><a name="st30"><b>state 30 (entry on '[')</b></a>
+    tipo : INT '['_']'    (16)
+
+    ']' <a href="#st35">shift 35</a>
+    . error
+
+<hr><a name="st31"><b>state 31 (entry on '(')</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '('_STRING '[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    STRING <a href="#st36">shift 36</a>
+    . error
+
+<hr><a name="st32"><b>state 32 (entry on metodos)</b></a>
+    metodos : metodos_metodo    (10)
+    classe : CLASS ID EXTENDS ID '{' vars metodos_'}'    (5)
+
+    PUBLIC <a href="#st27">shift 27</a>
+    '}' <a href="#st37">shift 37</a>
+    . error
+
+    metodo <a href="#st26">goto 26</a>
+
+<hr><a name="st33"><b>state 33 (entry on tipo)</b></a>
+    metodo : PUBLIC tipo_ID '(' ')' '{' vars cmds RETURN exp ';' '}'    (12)
+    metodo : PUBLIC tipo_ID '(' params ')' '{' vars cmds RETURN exp ';' '}'    (13)
+
+    ID <a href="#st38">shift 38</a>
+    . error
+
+<hr><a name="st34"><b>state 34 (entry on ';')</b></a>
+    var : tipo ID ';'_    (9)
+
+    WHILE reduce 9
+    '}' reduce 9
+    RETURN reduce 9
+    PUBLIC reduce 9
+    INT reduce 9
+    PRINTLN reduce 9
+    '{' reduce 9
+    IF reduce 9
+    ID reduce 9
+    BOOLEAN reduce 9
+    . error
+
+<hr><a name="st35"><b>state 35 (entry on ']')</b></a>
+    tipo : INT '[' ']'_    (16)
+
+    ID reduce 16
+    . error
+
+<hr><a name="st36"><b>state 36 (entry on STRING)</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING_'[' ']' ID ')' '{' cmd '}' '}'    (2)
+
+    '[' <a href="#st39">shift 39</a>
+    . error
+
+<hr><a name="st37"><b>state 37 (entry on '}')</b></a>
+    classe : CLASS ID EXTENDS ID '{' vars metodos '}'_    (5)
+
+    CLASS reduce 5
+    $end reduce 5
+    . error
+
+<hr><a name="st38"><b>state 38 (entry on ID)</b></a>
+    metodo : PUBLIC tipo ID_'(' ')' '{' vars cmds RETURN exp ';' '}'    (12)
+    metodo : PUBLIC tipo ID_'(' params ')' '{' vars cmds RETURN exp ';' '}'    (13)
+
+    '(' <a href="#st40">shift 40</a>
+    . error
+
+<hr><a name="st39"><b>state 39 (entry on '[')</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '['_']' ID ')' '{' cmd '}' '}'    (2)
+
+    ']' <a href="#st41">shift 41</a>
+    . error
+
+<hr><a name="st40"><b>state 40 (entry on '(')</b></a>
+    metodo : PUBLIC tipo ID '('_')' '{' vars cmds RETURN exp ';' '}'    (12)
+    metodo : PUBLIC tipo ID '('_params ')' '{' vars cmds RETURN exp ';' '}'    (13)
+
+    BOOLEAN <a href="#st21">shift 21</a>
+    ID <a href="#st22">shift 22</a>
+    INT <a href="#st23">shift 23</a>
+    ')' <a href="#st44">shift 44</a>
+    . error
+
+    params <a href="#st42">goto 42</a>
+    tipo <a href="#st43">goto 43</a>
+
+<hr><a name="st41"><b>state 41 (entry on ']')</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']'_ID ')' '{' cmd '}' '}'    (2)
+
+    ID <a href="#st45">shift 45</a>
+    . error
+
+<hr><a name="st42"><b>state 42 (entry on params)</b></a>
+    metodo : PUBLIC tipo ID '(' params_')' '{' vars cmds RETURN exp ';' '}'    (13)
+    params : params_',' tipo ID    (14)
+
+    ')' <a href="#st46">shift 46</a>
+    ',' <a href="#st47">shift 47</a>
+    . error
+
+<hr><a name="st43"><b>state 43 (entry on tipo)</b></a>
+    params : tipo_ID    (15)
+
+    ID <a href="#st48">shift 48</a>
+    . error
+
+<hr><a name="st44"><b>state 44 (entry on ')')</b></a>
+    metodo : PUBLIC tipo ID '(' ')'_'{' vars cmds RETURN exp ';' '}'    (12)
+
+    '{' <a href="#st49">shift 49</a>
+    . error
+
+<hr><a name="st45"><b>state 45 (entry on ID)</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID_')' '{' cmd '}' '}'    (2)
+
+    ')' <a href="#st50">shift 50</a>
+    . error
+
+<hr><a name="st46"><b>state 46 (entry on ')')</b></a>
+    metodo : PUBLIC tipo ID '(' params ')'_'{' vars cmds RETURN exp ';' '}'    (13)
+
+    '{' <a href="#st51">shift 51</a>
+    . error
+
+<hr><a name="st47"><b>state 47 (entry on ',')</b></a>
+    params : params ','_tipo ID    (14)
+
+    BOOLEAN <a href="#st21">shift 21</a>
+    ID <a href="#st22">shift 22</a>
+    INT <a href="#st23">shift 23</a>
+    . error
+
+    tipo <a href="#st52">goto 52</a>
+
+<hr><a name="st48"><b>state 48 (entry on ID)</b></a>
+    params : tipo ID_    (15)
+
+    ')' reduce 15
+    ',' reduce 15
+    . error
+
+<hr><a name="st49"><b>state 49 (entry on '{')</b></a>
+    metodo : PUBLIC tipo ID '(' ')' '{'_vars cmds RETURN exp ';' '}'    (12)
+    vars : _    (8)
+
+    WHILE reduce 8
+    '{' reduce 8
+    RETURN reduce 8
+    INT reduce 8
+    PRINTLN reduce 8
+    IF reduce 8
+    ID reduce 8
+    BOOLEAN reduce 8
+    . error
+
+    vars <a href="#st53">goto 53</a>
+
+<hr><a name="st50"><b>state 50 (entry on ')')</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')'_'{' cmd '}' '}'    (2)
+
+    '{' <a href="#st54">shift 54</a>
+    . error
+
+<hr><a name="st51"><b>state 51 (entry on '{')</b></a>
+    metodo : PUBLIC tipo ID '(' params ')' '{'_vars cmds RETURN exp ';' '}'    (13)
+    vars : _    (8)
+
+    WHILE reduce 8
+    '{' reduce 8
+    RETURN reduce 8
+    INT reduce 8
+    PRINTLN reduce 8
+    IF reduce 8
+    ID reduce 8
+    BOOLEAN reduce 8
+    . error
+
+    vars <a href="#st55">goto 55</a>
+
+<hr><a name="st52"><b>state 52 (entry on tipo)</b></a>
+    params : params ',' tipo_ID    (14)
+
+    ID <a href="#st56">shift 56</a>
+    . error
+
+53: shift/reduce conflict (shift 22 and red'n 28) on ID
+<hr><a name="st53"><b>state 53 (entry on vars)</b></a>
+    cmds : _    (28)
+    metodo : PUBLIC tipo ID '(' ')' '{' vars_cmds RETURN exp ';' '}'    (12)
+    vars : vars_var    (7)
+
+    BOOLEAN <a href="#st21">shift 21</a>
+    ID <a href="#st22">shift 22</a>
+    INT <a href="#st23">shift 23</a>
+    WHILE reduce 28
+    '{' reduce 28
+    RETURN reduce 28
+    PRINTLN reduce 28
+    IF reduce 28
+    . error
+
+    cmds <a href="#st57">goto 57</a>
+    tipo <a href="#st19">goto 19</a>
+    var <a href="#st20">goto 20</a>
+
+<hr><a name="st54"><b>state 54 (entry on '{')</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{'_cmd '}' '}'    (2)
+
+    ID <a href="#st59">shift 59</a>
+    IF <a href="#st60">shift 60</a>
+    PRINTLN <a href="#st61">shift 61</a>
+    WHILE <a href="#st62">shift 62</a>
+    '{' <a href="#st63">shift 63</a>
+    . error
+
+    cmd <a href="#st58">goto 58</a>
+
+55: shift/reduce conflict (shift 22 and red'n 28) on ID
+<hr><a name="st55"><b>state 55 (entry on vars)</b></a>
+    cmds : _    (28)
+    metodo : PUBLIC tipo ID '(' params ')' '{' vars_cmds RETURN exp ';' '}'    (13)
+    vars : vars_var    (7)
+
+    BOOLEAN <a href="#st21">shift 21</a>
+    ID <a href="#st22">shift 22</a>
+    INT <a href="#st23">shift 23</a>
+    WHILE reduce 28
+    '{' reduce 28
+    RETURN reduce 28
+    PRINTLN reduce 28
+    IF reduce 28
+    . error
+
+    cmds <a href="#st64">goto 64</a>
+    tipo <a href="#st19">goto 19</a>
+    var <a href="#st20">goto 20</a>
+
+<hr><a name="st56"><b>state 56 (entry on ID)</b></a>
+    params : params ',' tipo ID_    (14)
+
+    ')' reduce 14
+    ',' reduce 14
+    . error
+
+<hr><a name="st57"><b>state 57 (entry on cmds)</b></a>
+    cmds : cmds_cmd    (27)
+    metodo : PUBLIC tipo ID '(' ')' '{' vars cmds_RETURN exp ';' '}'    (12)
+
+    ID <a href="#st59">shift 59</a>
+    IF <a href="#st60">shift 60</a>
+    PRINTLN <a href="#st61">shift 61</a>
+    WHILE <a href="#st62">shift 62</a>
+    '{' <a href="#st63">shift 63</a>
+    RETURN <a href="#st66">shift 66</a>
+    . error
+
+    cmd <a href="#st65">goto 65</a>
+
+<hr><a name="st58"><b>state 58 (entry on cmd)</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd_'}' '}'    (2)
+
+    '}' <a href="#st67">shift 67</a>
+    . error
+
+<hr><a name="st59"><b>state 59 (entry on ID)</b></a>
+    cmd : ID_'=' exp ';'    (25)
+    cmd : ID_'[' exp ']' '=' exp ';'    (26)
+
+    '=' <a href="#st68">shift 68</a>
+    '[' <a href="#st69">shift 69</a>
+    . error
+
+<hr><a name="st60"><b>state 60 (entry on IF)</b></a>
+    cmd : IF_'(' exp ')' cmd    (21)
+    cmd : IF_'(' exp ')' cmd ELSE cmd    (22)
+
+    '(' <a href="#st70">shift 70</a>
+    . error
+
+<hr><a name="st61"><b>state 61 (entry on PRINTLN)</b></a>
+    cmd : PRINTLN_'(' exp ')' ';'    (24)
+
+    '(' <a href="#st71">shift 71</a>
+    . error
+
+<hr><a name="st62"><b>state 62 (entry on WHILE)</b></a>
+    cmd : WHILE_'(' exp ')' cmd    (23)
+
+    '(' <a href="#st72">shift 72</a>
+    . error
+
+<hr><a name="st63"><b>state 63 (entry on '{')</b></a>
+    cmd : '{'_cmds '}'    (20)
+    cmds : _    (28)
+
+    WHILE reduce 28
+    '}' reduce 28
+    '{' reduce 28
+    PRINTLN reduce 28
+    IF reduce 28
+    ID reduce 28
+    . error
+
+    cmds <a href="#st73">goto 73</a>
+
+<hr><a name="st64"><b>state 64 (entry on cmds)</b></a>
+    cmds : cmds_cmd    (27)
+    metodo : PUBLIC tipo ID '(' params ')' '{' vars cmds_RETURN exp ';' '}'    (13)
+
+    ID <a href="#st59">shift 59</a>
+    IF <a href="#st60">shift 60</a>
+    PRINTLN <a href="#st61">shift 61</a>
+    WHILE <a href="#st62">shift 62</a>
+    '{' <a href="#st63">shift 63</a>
+    RETURN <a href="#st74">shift 74</a>
+    . error
+
+    cmd <a href="#st65">goto 65</a>
+
+<hr><a name="st65"><b>state 65 (entry on cmd)</b></a>
+    cmds : cmds cmd_    (27)
+
+    WHILE reduce 27
+    '}' reduce 27
+    '{' reduce 27
+    RETURN reduce 27
+    PRINTLN reduce 27
+    IF reduce 27
+    ID reduce 27
+    . error
+
+<hr><a name="st66"><b>state 66 (entry on RETURN)</b></a>
+    metodo : PUBLIC tipo ID '(' ')' '{' vars cmds RETURN_exp ';' '}'    (12)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st75">goto 75</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st67"><b>state 67 (entry on '}')</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}'_'}'    (2)
+
+    '}' <a href="#st87">shift 87</a>
+    . error
+
+<hr><a name="st68"><b>state 68 (entry on '=')</b></a>
+    cmd : ID '='_exp ';'    (25)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st88">goto 88</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st69"><b>state 69 (entry on '[')</b></a>
+    cmd : ID '['_exp ']' '=' exp ';'    (26)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st89">goto 89</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st70"><b>state 70 (entry on '(')</b></a>
+    cmd : IF '('_exp ')' cmd    (21)
+    cmd : IF '('_exp ')' cmd ELSE cmd    (22)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st90">goto 90</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st71"><b>state 71 (entry on '(')</b></a>
+    cmd : PRINTLN '('_exp ')' ';'    (24)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st91">goto 91</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st72"><b>state 72 (entry on '(')</b></a>
+    cmd : WHILE '('_exp ')' cmd    (23)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st92">goto 92</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st73"><b>state 73 (entry on cmds)</b></a>
+    cmd : '{' cmds_'}'    (20)
+    cmds : cmds_cmd    (27)
+
+    ID <a href="#st59">shift 59</a>
+    IF <a href="#st60">shift 60</a>
+    PRINTLN <a href="#st61">shift 61</a>
+    WHILE <a href="#st62">shift 62</a>
+    '{' <a href="#st63">shift 63</a>
+    '}' <a href="#st93">shift 93</a>
+    . error
+
+    cmd <a href="#st65">goto 65</a>
+
+<hr><a name="st74"><b>state 74 (entry on RETURN)</b></a>
+    metodo : PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN_exp ';' '}'    (13)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st94">goto 94</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st75"><b>state 75 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    metodo : PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp_';' '}'    (12)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    ';' <a href="#st102">shift 102</a>
+    '<' <a href="#st103">shift 103</a>
+    . error
+
+<hr><a name="st76"><b>state 76 (entry on pexp)</b></a>
+    exp : pexp_'.' LENGTH    (44)
+    exp : pexp_'[' exp ']'    (45)
+    exp : pexp_    (46)
+    pexp : pexp_'.' ID    (51)
+    pexp : pexp_'.' ID '(' exps ')'    (52)
+    pexp : pexp_'.' ID '(' ')'    (53)
+
+    '.' <a href="#st104">shift 104</a>
+    '[' <a href="#st105">shift 105</a>
+    ')' reduce 46
+    NEQUALS reduce 46
+    ']' reduce 46
+    EQUALS reduce 46
+    '<' reduce 46
+    ';' reduce 46
+    '/' reduce 46
+    '-' reduce 46
+    ',' reduce 46
+    '+' reduce 46
+    '*' reduce 46
+    AND reduce 46
+    . error
+
+<hr><a name="st77"><b>state 77 (entry on FALSE)</b></a>
+    exp : FALSE_    (40)
+
+    ')' reduce 40
+    NEQUALS reduce 40
+    ']' reduce 40
+    EQUALS reduce 40
+    '<' reduce 40
+    ';' reduce 40
+    '/' reduce 40
+    '-' reduce 40
+    ',' reduce 40
+    '+' reduce 40
+    '*' reduce 40
+    AND reduce 40
+    . error
+
+<hr><a name="st78"><b>state 78 (entry on ID)</b></a>
+    pexp : ID_    (47)
+
+    ')' reduce 47
+    NEQUALS reduce 47
+    ']' reduce 47
+    '[' reduce 47
+    EQUALS reduce 47
+    '<' reduce 47
+    ';' reduce 47
+    '/' reduce 47
+    '.' reduce 47
+    '-' reduce 47
+    ',' reduce 47
+    '+' reduce 47
+    '*' reduce 47
+    AND reduce 47
+    . error
+
+<hr><a name="st79"><b>state 79 (entry on NEW)</b></a>
+    exp : NEW_INT '[' exp ']'    (43)
+    pexp : NEW_ID '(' ')'    (49)
+
+    ID <a href="#st106">shift 106</a>
+    INT <a href="#st107">shift 107</a>
+    . error
+
+<hr><a name="st80"><b>state 80 (entry on NULL)</b></a>
+    exp : NULL_    (42)
+
+    ')' reduce 42
+    NEQUALS reduce 42
+    ']' reduce 42
+    EQUALS reduce 42
+    '<' reduce 42
+    ';' reduce 42
+    '/' reduce 42
+    '-' reduce 42
+    ',' reduce 42
+    '+' reduce 42
+    '*' reduce 42
+    AND reduce 42
+    . error
+
+<hr><a name="st81"><b>state 81 (entry on NUM)</b></a>
+    exp : NUM_    (41)
+
+    ')' reduce 41
+    NEQUALS reduce 41
+    ']' reduce 41
+    EQUALS reduce 41
+    '<' reduce 41
+    ';' reduce 41
+    '/' reduce 41
+    '-' reduce 41
+    ',' reduce 41
+    '+' reduce 41
+    '*' reduce 41
+    AND reduce 41
+    . error
+
+<hr><a name="st82"><b>state 82 (entry on THIS)</b></a>
+    pexp : THIS_    (48)
+
+    ')' reduce 48
+    NEQUALS reduce 48
+    ']' reduce 48
+    '[' reduce 48
+    EQUALS reduce 48
+    '<' reduce 48
+    ';' reduce 48
+    '/' reduce 48
+    '.' reduce 48
+    '-' reduce 48
+    ',' reduce 48
+    '+' reduce 48
+    '*' reduce 48
+    AND reduce 48
+    . error
+
+<hr><a name="st83"><b>state 83 (entry on TRUE)</b></a>
+    exp : TRUE_    (39)
+
+    ')' reduce 39
+    NEQUALS reduce 39
+    ']' reduce 39
+    EQUALS reduce 39
+    '<' reduce 39
+    ';' reduce 39
+    '/' reduce 39
+    '-' reduce 39
+    ',' reduce 39
+    '+' reduce 39
+    '*' reduce 39
+    AND reduce 39
+    . error
+
+<hr><a name="st84"><b>state 84 (entry on '!')</b></a>
+    exp : '!'_exp    (38)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st108">goto 108</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st85"><b>state 85 (entry on '(')</b></a>
+    pexp : '('_exp ')'    (50)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st109">goto 109</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st86"><b>state 86 (entry on '-')</b></a>
+    exp : '-'_exp    (37)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st110">goto 110</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st87"><b>state 87 (entry on '}')</b></a>
+    main : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'_    (2)
+
+    CLASS reduce 2
+    $end reduce 2
+    . error
+
+<hr><a name="st88"><b>state 88 (entry on exp)</b></a>
+    cmd : ID '=' exp_';'    (25)
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ';' <a href="#st111">shift 111</a>
+    . error
+
+<hr><a name="st89"><b>state 89 (entry on exp)</b></a>
+    cmd : ID '[' exp_']' '=' exp ';'    (26)
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ']' <a href="#st112">shift 112</a>
+    . error
+
+<hr><a name="st90"><b>state 90 (entry on exp)</b></a>
+    cmd : IF '(' exp_')' cmd    (21)
+    cmd : IF '(' exp_')' cmd ELSE cmd    (22)
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ')' <a href="#st113">shift 113</a>
+    . error
+
+<hr><a name="st91"><b>state 91 (entry on exp)</b></a>
+    cmd : PRINTLN '(' exp_')' ';'    (24)
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ')' <a href="#st114">shift 114</a>
+    . error
+
+<hr><a name="st92"><b>state 92 (entry on exp)</b></a>
+    cmd : WHILE '(' exp_')' cmd    (23)
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ')' <a href="#st115">shift 115</a>
+    . error
+
+<hr><a name="st93"><b>state 93 (entry on '}')</b></a>
+    cmd : '{' cmds '}'_    (20)
+
+    WHILE reduce 20
+    '}' reduce 20
+    '{' reduce 20
+    RETURN reduce 20
+    PRINTLN reduce 20
+    IF reduce 20
+    ID reduce 20
+    ELSE reduce 20
+    . error
+
+<hr><a name="st94"><b>state 94 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    metodo : PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp_';' '}'    (13)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ';' <a href="#st116">shift 116</a>
+    . error
+
+<hr><a name="st95"><b>state 95 (entry on AND)</b></a>
+    exp : exp AND_exp    (36)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st117">goto 117</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st96"><b>state 96 (entry on EQUALS)</b></a>
+    exp : exp EQUALS_exp    (34)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st118">goto 118</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st97"><b>state 97 (entry on NEQUALS)</b></a>
+    exp : exp NEQUALS_exp    (35)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st119">goto 119</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st98"><b>state 98 (entry on '*')</b></a>
+    exp : exp '*'_exp    (31)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st120">goto 120</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st99"><b>state 99 (entry on '+')</b></a>
+    exp : exp '+'_exp    (29)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st121">goto 121</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st100"><b>state 100 (entry on '-')</b></a>
+    exp : exp '-'_exp    (30)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st122">goto 122</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st101"><b>state 101 (entry on '/')</b></a>
+    exp : exp '/'_exp    (32)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st123">goto 123</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st102"><b>state 102 (entry on ';')</b></a>
+    metodo : PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp ';'_'}'    (12)
+
+    '}' <a href="#st124">shift 124</a>
+    . error
+
+<hr><a name="st103"><b>state 103 (entry on '<')</b></a>
+    exp : exp '<'_exp    (33)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st125">goto 125</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st104"><b>state 104 (entry on '.')</b></a>
+    exp : pexp '.'_LENGTH    (44)
+    pexp : pexp '.'_ID    (51)
+    pexp : pexp '.'_ID '(' exps ')'    (52)
+    pexp : pexp '.'_ID '(' ')'    (53)
+
+    ID <a href="#st126">shift 126</a>
+    LENGTH <a href="#st127">shift 127</a>
+    . error
+
+<hr><a name="st105"><b>state 105 (entry on '[')</b></a>
+    exp : pexp '['_exp ']'    (45)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st128">goto 128</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st106"><b>state 106 (entry on ID)</b></a>
+    pexp : NEW ID_'(' ')'    (49)
+
+    '(' <a href="#st129">shift 129</a>
+    . error
+
+<hr><a name="st107"><b>state 107 (entry on INT)</b></a>
+    exp : NEW INT_'[' exp ']'    (43)
+
+    '[' <a href="#st130">shift 130</a>
+    . error
+
+<hr><a name="st108"><b>state 108 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    exp : '!' exp_    (38)
+
+    ')' reduce 38
+    NEQUALS reduce 38
+    ']' reduce 38
+    EQUALS reduce 38
+    '<' reduce 38
+    ';' reduce 38
+    '/' reduce 38
+    '-' reduce 38
+    ',' reduce 38
+    '+' reduce 38
+    '*' reduce 38
+    AND reduce 38
+    . error
+
+<hr><a name="st109"><b>state 109 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    pexp : '(' exp_')'    (50)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ')' <a href="#st131">shift 131</a>
+    . error
+
+<hr><a name="st110"><b>state 110 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    exp : '-' exp_    (37)
+
+    ')' reduce 37
+    NEQUALS reduce 37
+    ']' reduce 37
+    EQUALS reduce 37
+    '<' reduce 37
+    ';' reduce 37
+    '/' reduce 37
+    '-' reduce 37
+    ',' reduce 37
+    '+' reduce 37
+    '*' reduce 37
+    AND reduce 37
+    . error
+
+<hr><a name="st111"><b>state 111 (entry on ';')</b></a>
+    cmd : ID '=' exp ';'_    (25)
+
+    WHILE reduce 25
+    '}' reduce 25
+    '{' reduce 25
+    RETURN reduce 25
+    PRINTLN reduce 25
+    IF reduce 25
+    ID reduce 25
+    ELSE reduce 25
+    . error
+
+<hr><a name="st112"><b>state 112 (entry on ']')</b></a>
+    cmd : ID '[' exp ']'_'=' exp ';'    (26)
+
+    '=' <a href="#st132">shift 132</a>
+    . error
+
+<hr><a name="st113"><b>state 113 (entry on ')')</b></a>
+    cmd : IF '(' exp ')'_cmd    (21)
+    cmd : IF '(' exp ')'_cmd ELSE cmd    (22)
+
+    ID <a href="#st59">shift 59</a>
+    IF <a href="#st60">shift 60</a>
+    PRINTLN <a href="#st61">shift 61</a>
+    WHILE <a href="#st62">shift 62</a>
+    '{' <a href="#st63">shift 63</a>
+    . error
+
+    cmd <a href="#st133">goto 133</a>
+
+<hr><a name="st114"><b>state 114 (entry on ')')</b></a>
+    cmd : PRINTLN '(' exp ')'_';'    (24)
+
+    ';' <a href="#st134">shift 134</a>
+    . error
+
+<hr><a name="st115"><b>state 115 (entry on ')')</b></a>
+    cmd : WHILE '(' exp ')'_cmd    (23)
+
+    ID <a href="#st59">shift 59</a>
+    IF <a href="#st60">shift 60</a>
+    PRINTLN <a href="#st61">shift 61</a>
+    WHILE <a href="#st62">shift 62</a>
+    '{' <a href="#st63">shift 63</a>
+    . error
+
+    cmd <a href="#st135">goto 135</a>
+
+<hr><a name="st116"><b>state 116 (entry on ';')</b></a>
+    metodo : PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp ';'_'}'    (13)
+
+    '}' <a href="#st136">shift 136</a>
+    . error
+
+<hr><a name="st117"><b>state 117 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    exp : exp AND exp_    (36)
+
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ')' reduce 36
+    ']' reduce 36
+    ';' reduce 36
+    ',' reduce 36
+    AND reduce 36
+    . error
+
+<hr><a name="st118"><b>state 118 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp EQUALS exp_    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    ')' reduce 34
+    NEQUALS reduce 34
+    ']' reduce 34
+    EQUALS reduce 34
+    '<' reduce 34
+    ';' reduce 34
+    ',' reduce 34
+    AND reduce 34
+    . error
+
+<hr><a name="st119"><b>state 119 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp NEQUALS exp_    (35)
+    exp : exp_AND exp    (36)
+
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    ')' reduce 35
+    NEQUALS reduce 35
+    ']' reduce 35
+    EQUALS reduce 35
+    '<' reduce 35
+    ';' reduce 35
+    ',' reduce 35
+    AND reduce 35
+    . error
+
+<hr><a name="st120"><b>state 120 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp '*' exp_    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    ')' reduce 31
+    NEQUALS reduce 31
+    ']' reduce 31
+    EQUALS reduce 31
+    '<' reduce 31
+    ';' reduce 31
+    '/' reduce 31
+    '-' reduce 31
+    ',' reduce 31
+    '+' reduce 31
+    '*' reduce 31
+    AND reduce 31
+    . error
+
+<hr><a name="st121"><b>state 121 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp '+' exp_    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    '*' <a href="#st98">shift 98</a>
+    '/' <a href="#st101">shift 101</a>
+    ')' reduce 29
+    NEQUALS reduce 29
+    ']' reduce 29
+    EQUALS reduce 29
+    '<' reduce 29
+    ';' reduce 29
+    '-' reduce 29
+    ',' reduce 29
+    '+' reduce 29
+    AND reduce 29
+    . error
+
+<hr><a name="st122"><b>state 122 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp '-' exp_    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    '*' <a href="#st98">shift 98</a>
+    '/' <a href="#st101">shift 101</a>
+    ')' reduce 30
+    NEQUALS reduce 30
+    ']' reduce 30
+    EQUALS reduce 30
+    '<' reduce 30
+    ';' reduce 30
+    '-' reduce 30
+    ',' reduce 30
+    '+' reduce 30
+    AND reduce 30
+    . error
+
+<hr><a name="st123"><b>state 123 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp '/' exp_    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    ')' reduce 32
+    NEQUALS reduce 32
+    ']' reduce 32
+    EQUALS reduce 32
+    '<' reduce 32
+    ';' reduce 32
+    '/' reduce 32
+    '-' reduce 32
+    ',' reduce 32
+    '+' reduce 32
+    '*' reduce 32
+    AND reduce 32
+    . error
+
+<hr><a name="st124"><b>state 124 (entry on '}')</b></a>
+    metodo : PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp ';' '}'_    (12)
+
+    '}' reduce 12
+    PUBLIC reduce 12
+    . error
+
+<hr><a name="st125"><b>state 125 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp '<' exp_    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    ')' reduce 33
+    NEQUALS reduce 33
+    ']' reduce 33
+    EQUALS reduce 33
+    '<' reduce 33
+    ';' reduce 33
+    ',' reduce 33
+    AND reduce 33
+    . error
+
+<hr><a name="st126"><b>state 126 (entry on ID)</b></a>
+    pexp : pexp '.' ID_    (51)
+    pexp : pexp '.' ID_'(' exps ')'    (52)
+    pexp : pexp '.' ID_'(' ')'    (53)
+
+    '(' <a href="#st137">shift 137</a>
+    ')' reduce 51
+    NEQUALS reduce 51
+    ']' reduce 51
+    '[' reduce 51
+    EQUALS reduce 51
+    '<' reduce 51
+    ';' reduce 51
+    '/' reduce 51
+    '.' reduce 51
+    '-' reduce 51
+    ',' reduce 51
+    '+' reduce 51
+    '*' reduce 51
+    AND reduce 51
+    . error
+
+<hr><a name="st127"><b>state 127 (entry on LENGTH)</b></a>
+    exp : pexp '.' LENGTH_    (44)
+
+    ')' reduce 44
+    NEQUALS reduce 44
+    ']' reduce 44
+    EQUALS reduce 44
+    '<' reduce 44
+    ';' reduce 44
+    '/' reduce 44
+    '-' reduce 44
+    ',' reduce 44
+    '+' reduce 44
+    '*' reduce 44
+    AND reduce 44
+    . error
+
+<hr><a name="st128"><b>state 128 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    exp : pexp '[' exp_']'    (45)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ']' <a href="#st138">shift 138</a>
+    . error
+
+<hr><a name="st129"><b>state 129 (entry on '(')</b></a>
+    pexp : NEW ID '('_')'    (49)
+
+    ')' <a href="#st139">shift 139</a>
+    . error
+
+<hr><a name="st130"><b>state 130 (entry on '[')</b></a>
+    exp : NEW INT '['_exp ']'    (43)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st140">goto 140</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st131"><b>state 131 (entry on ')')</b></a>
+    pexp : '(' exp ')'_    (50)
+
+    ')' reduce 50
+    NEQUALS reduce 50
+    ']' reduce 50
+    '[' reduce 50
+    EQUALS reduce 50
+    '<' reduce 50
+    ';' reduce 50
+    '/' reduce 50
+    '.' reduce 50
+    '-' reduce 50
+    ',' reduce 50
+    '+' reduce 50
+    '*' reduce 50
+    AND reduce 50
+    . error
+
+<hr><a name="st132"><b>state 132 (entry on '=')</b></a>
+    cmd : ID '[' exp ']' '='_exp ';'    (26)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st141">goto 141</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st133"><b>state 133 (entry on cmd)</b></a>
+    cmd : IF '(' exp ')' cmd_    (21)
+    cmd : IF '(' exp ')' cmd_ELSE cmd    (22)
+
+    ELSE <a href="#st142">shift 142</a>
+    WHILE reduce 21
+    '}' reduce 21
+    '{' reduce 21
+    RETURN reduce 21
+    PRINTLN reduce 21
+    IF reduce 21
+    ID reduce 21
+    . error
+
+<hr><a name="st134"><b>state 134 (entry on ';')</b></a>
+    cmd : PRINTLN '(' exp ')' ';'_    (24)
+
+    WHILE reduce 24
+    '}' reduce 24
+    '{' reduce 24
+    RETURN reduce 24
+    PRINTLN reduce 24
+    IF reduce 24
+    ID reduce 24
+    ELSE reduce 24
+    . error
+
+<hr><a name="st135"><b>state 135 (entry on cmd)</b></a>
+    cmd : WHILE '(' exp ')' cmd_    (23)
+
+    WHILE reduce 23
+    '}' reduce 23
+    '{' reduce 23
+    RETURN reduce 23
+    PRINTLN reduce 23
+    IF reduce 23
+    ID reduce 23
+    ELSE reduce 23
+    . error
+
+<hr><a name="st136"><b>state 136 (entry on '}')</b></a>
+    metodo : PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp ';' '}'_    (13)
+
+    '}' reduce 13
+    PUBLIC reduce 13
+    . error
+
+<hr><a name="st137"><b>state 137 (entry on '(')</b></a>
+    pexp : pexp '.' ID '('_exps ')'    (52)
+    pexp : pexp '.' ID '('_')'    (53)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    ')' <a href="#st145">shift 145</a>
+    . error
+
+    exp <a href="#st143">goto 143</a>
+    exps <a href="#st144">goto 144</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st138"><b>state 138 (entry on ']')</b></a>
+    exp : pexp '[' exp ']'_    (45)
+
+    ')' reduce 45
+    NEQUALS reduce 45
+    ']' reduce 45
+    EQUALS reduce 45
+    '<' reduce 45
+    ';' reduce 45
+    '/' reduce 45
+    '-' reduce 45
+    ',' reduce 45
+    '+' reduce 45
+    '*' reduce 45
+    AND reduce 45
+    . error
+
+<hr><a name="st139"><b>state 139 (entry on ')')</b></a>
+    pexp : NEW ID '(' ')'_    (49)
+
+    ')' reduce 49
+    NEQUALS reduce 49
+    ']' reduce 49
+    '[' reduce 49
+    EQUALS reduce 49
+    '<' reduce 49
+    ';' reduce 49
+    '/' reduce 49
+    '.' reduce 49
+    '-' reduce 49
+    ',' reduce 49
+    '+' reduce 49
+    '*' reduce 49
+    AND reduce 49
+    . error
+
+<hr><a name="st140"><b>state 140 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    exp : NEW INT '[' exp_']'    (43)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ']' <a href="#st146">shift 146</a>
+    . error
+
+<hr><a name="st141"><b>state 141 (entry on exp)</b></a>
+    cmd : ID '[' exp ']' '=' exp_';'    (26)
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ';' <a href="#st147">shift 147</a>
+    . error
+
+<hr><a name="st142"><b>state 142 (entry on ELSE)</b></a>
+    cmd : IF '(' exp ')' cmd ELSE_cmd    (22)
+
+    ID <a href="#st59">shift 59</a>
+    IF <a href="#st60">shift 60</a>
+    PRINTLN <a href="#st61">shift 61</a>
+    WHILE <a href="#st62">shift 62</a>
+    '{' <a href="#st63">shift 63</a>
+    . error
+
+    cmd <a href="#st148">goto 148</a>
+
+<hr><a name="st143"><b>state 143 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    exps : exp_    (55)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ')' reduce 55
+    ',' reduce 55
+    . error
+
+<hr><a name="st144"><b>state 144 (entry on exps)</b></a>
+    exps : exps_',' exp    (54)
+    pexp : pexp '.' ID '(' exps_')'    (52)
+
+    ')' <a href="#st149">shift 149</a>
+    ',' <a href="#st150">shift 150</a>
+    . error
+
+<hr><a name="st145"><b>state 145 (entry on ')')</b></a>
+    pexp : pexp '.' ID '(' ')'_    (53)
+
+    ')' reduce 53
+    NEQUALS reduce 53
+    ']' reduce 53
+    '[' reduce 53
+    EQUALS reduce 53
+    '<' reduce 53
+    ';' reduce 53
+    '/' reduce 53
+    '.' reduce 53
+    '-' reduce 53
+    ',' reduce 53
+    '+' reduce 53
+    '*' reduce 53
+    AND reduce 53
+    . error
+
+<hr><a name="st146"><b>state 146 (entry on ']')</b></a>
+    exp : NEW INT '[' exp ']'_    (43)
+
+    ')' reduce 43
+    NEQUALS reduce 43
+    ']' reduce 43
+    EQUALS reduce 43
+    '<' reduce 43
+    ';' reduce 43
+    '/' reduce 43
+    '-' reduce 43
+    ',' reduce 43
+    '+' reduce 43
+    '*' reduce 43
+    AND reduce 43
+    . error
+
+<hr><a name="st147"><b>state 147 (entry on ';')</b></a>
+    cmd : ID '[' exp ']' '=' exp ';'_    (26)
+
+    WHILE reduce 26
+    '}' reduce 26
+    '{' reduce 26
+    RETURN reduce 26
+    PRINTLN reduce 26
+    IF reduce 26
+    ID reduce 26
+    ELSE reduce 26
+    . error
+
+<hr><a name="st148"><b>state 148 (entry on cmd)</b></a>
+    cmd : IF '(' exp ')' cmd ELSE cmd_    (22)
+
+    WHILE reduce 22
+    '}' reduce 22
+    '{' reduce 22
+    RETURN reduce 22
+    PRINTLN reduce 22
+    IF reduce 22
+    ID reduce 22
+    ELSE reduce 22
+    . error
+
+<hr><a name="st149"><b>state 149 (entry on ')')</b></a>
+    pexp : pexp '.' ID '(' exps ')'_    (52)
+
+    ')' reduce 52
+    NEQUALS reduce 52
+    ']' reduce 52
+    '[' reduce 52
+    EQUALS reduce 52
+    '<' reduce 52
+    ';' reduce 52
+    '/' reduce 52
+    '.' reduce 52
+    '-' reduce 52
+    ',' reduce 52
+    '+' reduce 52
+    '*' reduce 52
+    AND reduce 52
+    . error
+
+<hr><a name="st150"><b>state 150 (entry on ',')</b></a>
+    exps : exps ','_exp    (54)
+
+    FALSE <a href="#st77">shift 77</a>
+    ID <a href="#st78">shift 78</a>
+    NEW <a href="#st79">shift 79</a>
+    NULL <a href="#st80">shift 80</a>
+    NUM <a href="#st81">shift 81</a>
+    THIS <a href="#st82">shift 82</a>
+    TRUE <a href="#st83">shift 83</a>
+    '!' <a href="#st84">shift 84</a>
+    '(' <a href="#st85">shift 85</a>
+    '-' <a href="#st86">shift 86</a>
+    . error
+
+    exp <a href="#st151">goto 151</a>
+    pexp <a href="#st76">goto 76</a>
+
+<hr><a name="st151"><b>state 151 (entry on exp)</b></a>
+    exp : exp_'+' exp    (29)
+    exp : exp_'-' exp    (30)
+    exp : exp_'*' exp    (31)
+    exp : exp_'/' exp    (32)
+    exp : exp_'<' exp    (33)
+    exp : exp_EQUALS exp    (34)
+    exp : exp_NEQUALS exp    (35)
+    exp : exp_AND exp    (36)
+    exps : exps ',' exp_    (54)
+
+    AND <a href="#st95">shift 95</a>
+    EQUALS <a href="#st96">shift 96</a>
+    NEQUALS <a href="#st97">shift 97</a>
+    '*' <a href="#st98">shift 98</a>
+    '+' <a href="#st99">shift 99</a>
+    '-' <a href="#st100">shift 100</a>
+    '/' <a href="#st101">shift 101</a>
+    '<' <a href="#st103">shift 103</a>
+    ')' reduce 54
+    ',' reduce 54
+    . error
+
+First sets:
+ First(prog): {CLASS}
+ First(classes): {CLASS}
+ First(cmd): {ID, IF, PRINTLN, WHILE, '{'}
+ First(cmds): {ID, IF, PRINTLN, WHILE, '{'}
+ First(exp): {FALSE, ID, NEW, NULL, NUM, THIS, TRUE, '!', '(', '-'}
+ First(exps): {FALSE, ID, NEW, NULL, NUM, THIS, TRUE, '!', '(', '-'}
+ First(main): {CLASS}
+ First(metodo): {PUBLIC}
+ First(metodos): {PUBLIC}
+ First(params): {BOOLEAN, ID, INT}
+ First(pexp): {ID, NEW, THIS, '('}
+ First(classe): {CLASS}
+ First(tipo): {BOOLEAN, ID, INT}
+ First(var): {BOOLEAN, ID, INT}
+ First(vars): {BOOLEAN, ID, INT}
+
+Follow sets:
+ Follow(prog): {$end}
+ Follow(classes): {CLASS, $end}
+ Follow(cmd): {ELSE, ID, IF, PRINTLN, RETURN, WHILE, '{', '}'}
+ Follow(cmds): {ID, IF, PRINTLN, RETURN, WHILE, '{', '}'}
+ Follow(exp): {AND, EQUALS, NEQUALS, ')', '*', '+', ',', '-', '/', ';', '<', ']'}
+ Follow(exps): {')', ','}
+ Follow(main): {CLASS, $end}
+ Follow(metodo): {PUBLIC, '}'}
+ Follow(metodos): {PUBLIC, '}'}
+ Follow(params): {')', ','}
+ Follow(pexp): {AND, EQUALS, NEQUALS, ')', '*', '+', ',', '-', '.', '/', ';', '<', '[', ']'}
+ Follow(classe): {CLASS, $end}
+ Follow(tipo): {ID}
+ Follow(var): {BOOLEAN, ID, IF, INT, PRINTLN, PUBLIC, RETURN, WHILE, '{', '}'}
+ Follow(vars): {BOOLEAN, ID, IF, INT, PRINTLN, PUBLIC, RETURN, WHILE, '{', '}'}
+
+Nullable = {classes, cmds, metodos, vars}
+
+45 terminals, 15 nonterminals;
+55 grammar rules, 152 states;
+2 shift/reduce and 0 reduce/reduce conflicts reported.
+</pre>
+</body>
+</html>

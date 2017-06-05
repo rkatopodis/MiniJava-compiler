@@ -1,6 +1,6 @@
 package minijava;
 
-public class Token implements Tokens {
+public class Token implements TokensNew {
 	public int tipo;
 	public String texto;
 	public int lin;
@@ -11,7 +11,7 @@ public class Token implements Tokens {
 	public final static String[] nomes = new String[] {
 		"<<EOF>>", "&&",
 		"boolean", "class", "else", "==", "extends", "false",
-		"id", "if", "int", "length", "main", "-", "!=", "new",
+		"id", "if", "int", "length", "main", "-", "!=", "new", "null",
 		"num", "System.out.println", "public", "return", "static",
 		"String", "this", "true", "void", "while"
 	};

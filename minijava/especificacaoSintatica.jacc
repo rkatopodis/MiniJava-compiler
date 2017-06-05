@@ -1,7 +1,6 @@
-﻿
-%package minijava
+%package br.com.MiniJava
 %class Parser
-%interface Tokens
+%interface Tokenss
 
 %{
 import minijava.ast.*;
@@ -10,7 +9,7 @@ import minijava.ast.*;
 %token <Token> BOOLEAN CLASS EXTENDS PUBLIC STATIC
 %token <Token> VOID MAIN STRING RETURN INT ELSE
 %token <Token> PRINTLN LENGTH TRUE FALSE THIS NULL
-%token <Token> NEW EQ NEQ AND '/' '*' '<' '!' '['
+%token <Token> NEW EQ NEQ AND '/' '*' '<' '!' '[' ']'
 %token <Token> ID NUM IF WHILE '.' '=' '+' '-' 
 
 %next proximo()
@@ -31,6 +30,15 @@ import minijava.ast.*;
 
 /* TODO: classes de prioridade */
 
+%right '=' EQ NEQ
+%left AND
+%left '<'
+%left '+' '-'
+%left '*' '/'
+%right NEW
+%right '!'
+%left '.' '(' ')' '[' ']' 
+
 %%
 
 prog : CLASS ID '{' PUBLIC STATIC VOID MAIN '(' STRING '[' ']' ID ')' '{' cmd '}' '}'
@@ -41,6 +49,13 @@ classes : classes classe   { $1.add($2); $$ = $1; }
         |                  { $$ = new java.util.ArrayList<Classe>(); }
         ;
 
+classe : CLASS ID '{' vars metodos '}'
+					{ $$ = new Classe($2.texto, $2.texto, $4, $5, $2.lin); }
+	   
+	   | CLASS ID EXTENDS ID'{' vars metodos '}'
+					{ $$ = new Classe($2.texto, $2.texto, $6, $7, $2.lin); }
+	   ;
+	   				
 /* TODO: não-terminal classe, gera nó Classe da AST, regra CLASSE na gramática */
 
 vars : vars var   { $1.add($2); $$ = $1; }
@@ -50,8 +65,10 @@ vars : vars var   { $1.add($2); $$ = $1; }
 var : tipo ID ';'  { $$ = new Var($1, $2.texto, $2.lin); }
     ; 
 
-/* TODO: não-terminal metodos, lista de 0 ou mais métodos, regra {METODO} */
-
+metodos : metodos metodo {$1.add($2); $$ = $1;}
+		| 				 { $$ = new java.util.ArrayList<Metodo>(); }
+		;
+		
 metodo : PUBLIC tipo ID '(' ')' '{' vars cmds RETURN exp ';' '}'
                 { $$ = new Metodo($2, $3.texto, new java.util.ArrayList<Var>(), $7, $8, $10, $3.lin); }
        | PUBLIC tipo ID '(' params ')' '{' vars cmds RETURN exp ';' '}'
@@ -72,6 +89,18 @@ tipo : INT '[' ']'  { $$ = "int[]"; }
 cmds : cmd cmds  { $2.add(0, $1); $$ = $2; } 
      |           { $$ = new java.util.ArrayList<Cmd>(); }
      ;
+     
+
+     
+cmd : '{' cmds '}' {$$ = new Bloco($2); }
+	| IF '(' exp ')' cmd { $$ = new If($3, $5, $1.lin ); }
+	| IF '(' exp ')' cmd ELSE cmd { $$ = new If($3, $5, $7, $1.lin ); }
+	| WHILE '(' exp ')' cmd { $$ = new While($3, $5, $1.lin); }
+	| PRINTLN '(' exp ')'';'{ $$ = new Println($3, $1.lin); }
+	| ID '=' exp ';'{ $$ = new Atrib($1.texto, $3, $2.lin); }
+	| ID '[' exp ']' '=' exp ';'{$$ = new AtribVetor($1.texto, $3, $6, $1.lin); }
+	;
+	
 
 /* TODO: não-terminal cmd, regra CMD na gramática, gera nós
    Bloco, If, While, Atrib, AtribVetor e Println
@@ -85,7 +114,7 @@ exp : exp '+' exp  { $$ = new Soma($1, $3, $2.lin); }
     | exp EQ exp   { $$ = new Igual($1, $3, $2.lin); }
     | exp NEQ exp  { $$ = new Dif($1, $3, $2.lin); }
     | exp AND exp  { $$ = new ELog($1, $3, $2.lin); }
-    | '-' exp %prec NEG { $$ = new Neg($2, $1.lin); }
+    | '-' exp 	   { $$ = new Neg($2, $1.lin); }
     | '!' exp      { $$ = new Nao($2, $1.lin); }
     | TRUE         { $$ = new True(); }
     | FALSE        { $$ = new False(); }

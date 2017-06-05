@@ -64,7 +64,7 @@ import java.io.IOException;
 [ \r\n\t\f]    { }
 
 // Comentários de uma linha
-"//"~'\n'    { }
+"//" [^\r\n]*    { }
 
 // Comentários de múltiplas linhas
 "/*"~"*/"   { }
@@ -76,14 +76,14 @@ import java.io.IOException;
 "public"             { return new Token(Token.PUBLIC, yyline, yycolumn); }
 "static"             { return new Token(Token.STATIC, yyline, yycolumn); }
 "void"               { return new Token(Token.VOID, yyline, yycolumn); }
-"main"               { return new Token(Token.VOID, yyline, yycolumn); }
+"main"               { return new Token(Token.MAIN, yyline, yycolumn); }
 "String"             { return new Token(Token.STRING, yyline, yycolumn); }
 "return"             { return new Token(Token.RETURN, yyline, yycolumn); }
 "int"                { return new Token(Token.INT, yyline, yycolumn); }
 "if"                 { return new Token(Token.IF, yyline, yycolumn); }
 "else"               { return new Token(Token.ELSE, yyline, yycolumn); }
 "while"              { return new Token(Token.WHILE, yyline, yycolumn); }
-"System.out.println" { return new Token(Token.PRINT, yyline, yycolumn); }
+"System.out.println" { return new Token(Token.PRINTLN, yyline, yycolumn); }
 "length"             { return new Token(Token.LENGTH, yyline, yycolumn); }
 "true"               { return new Token(Token.TRUE, yyline, yycolumn); }
 "false"              { return new Token(Token.FALSE, yyline, yycolumn); }
@@ -92,31 +92,31 @@ import java.io.IOException;
 "null"               { return new Token(Token.NULL, yyline, yycolumn); }
 
 // Identificadores
-[a-zA-Z][a-zA-Z0-9_]*    { return new Token(Token.ID, yyline, yycolumn); }
+[a-zA-Z][a-zA-Z0-9_]*    { return new Token(Token.ID, yytext(), yyline, yycolumn); }
 
 // Numerais
-[0-9]+                   { return new Token(Token.NUM, yyline, yycolumn); }
+[0-9]+                   { return new Token(Token.NUM, yytext(), yyline, yycolumn); }
 
 // Operadores e pontuação
-"("                      { return new Token("(", yyline, yycolumn); }
-")"                      { return new Token(")", yyline, yycolumn); }
-"["                      { return new Token("[", yyline, yycolumn); }
-"]"                      { return new Token("]", yyline, yycolumn); }
-"{"                      { return new Token("{", yyline, yycolumn); }
-"}"                      { return new Token("}", yyline, yycolumn); }
-";"                      { return new Token(";", yyline, yycolumn); }
-"."                      { return new Token(".", yyline, yycolumn); }
-","                      { return new Token(",", yyline, yycolumn); }
-"="                      { return new Token("=", yyline, yycolumn); }
-"<"                      { return new Token("<", yyline, yycolumn); }
-"=="                      { return new Token("==", yyline, yycolumn); }
-"!="                      { return new Token("!=", yyline, yycolumn); }
-"+"                      { return new Token("+", yyline, yycolumn); }
-"-"                      { return new Token("-", yyline, yycolumn); }
-"*"                      { return new Token("*", yyline, yycolumn); }
-"/"                      { return new Token("/", yyline, yycolumn); }
-"&&"                      { return new Token("&&", yyline, yycolumn); }
-"!"                      { return new Token("!", yyline, yycolumn); }
+"("                      { return new Token('(', yyline, yycolumn); }
+")"                      { return new Token(')', yyline, yycolumn); }
+"["                      { return new Token('[', yyline, yycolumn); }
+"]"                      { return new Token(']', yyline, yycolumn); }
+"{"                      { return new Token('{', yyline, yycolumn); }
+"}"                      { return new Token('}', yyline, yycolumn); }
+";"                      { return new Token(';', yyline, yycolumn); }
+"."                      { return new Token('.', yyline, yycolumn); }
+","                      { return new Token(',', yyline, yycolumn); }
+"=="                     { return new Token(Token.EQUALS, yyline, yycolumn); }
+"="                      { return new Token('=', yyline, yycolumn); }
+"<"                      { return new Token('<', yyline, yycolumn); }
+"!="                     { return new Token(Token.NEQUALS, yyline, yycolumn); }
+"+"                      { return new Token('+', yyline, yycolumn); }
+"-"                      { return new Token('-', yyline, yycolumn); }
+"*"                      { return new Token('*', yyline, yycolumn); }
+"/"                      { return new Token('/', yyline, yycolumn); }
+"&&"                     { return new Token(Token.AND, yyline, yycolumn); }
+"!"                      { return new Token('!', yyline, yycolumn); }
 
 // Identificadores e numerais devem ser retornados com
 // return new Token(Token.ID, yytext(), yyline, yycolumn)

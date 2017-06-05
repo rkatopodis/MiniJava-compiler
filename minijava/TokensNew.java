@@ -1,14 +1,14 @@
-// Output created by jacc on Sun Jun 09 13:11:15 BRT 2013
+// Output created by jacc on Sun Jun 04 21:10:49 BRT 2017
 
 package minijava;
 
-interface Tokens {
+interface TokensNew {
     int ENDINPUT = 0;
     int AND = 1;
     int BOOLEAN = 2;
     int CLASS = 3;
     int ELSE = 4;
-    int EQ = 5;
+    int EQUALS = 5;
     int EXTENDS = 6;
     int FALSE = 7;
     int ID = 8;
@@ -17,19 +17,20 @@ interface Tokens {
     int LENGTH = 11;
     int MAIN = 12;
     int NEG = 13;
-    int NEQ = 14;
+    int NEQUALS = 14;
     int NEW = 15;
-    int NUM = 16;
-    int PRINTLN = 17;
-    int PUBLIC = 18;
-    int RETURN = 19;
-    int STATIC = 20;
-    int STRING = 21;
-    int THIS = 22;
-    int TRUE = 23;
-    int VOID = 24;
-    int WHILE = 25;
-    int error = 26;
+    int NULL = 16;
+    int NUM = 17;
+    int PRINTLN = 18;
+    int PUBLIC = 19;
+    int RETURN = 20;
+    int STATIC = 21;
+    int STRING = 22;
+    int THIS = 23;
+    int TRUE = 24;
+    int VOID = 25;
+    int WHILE = 26;
+    int error = 27;
     // '!' (code=33)
     // '(' (code=40)
     // ')' (code=41)
