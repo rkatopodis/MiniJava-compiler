@@ -1,4 +1,4 @@
-// Output created by jacc on Sun Jun 04 21:10:49 BRT 2017
+// Output created by jacc on Mon Jun 05 10:00:33 BRT 2017
 
 package minijava;
 
@@ -19,18 +19,19 @@ interface TokensNew {
     int NEG = 13;
     int NEQUALS = 14;
     int NEW = 15;
-    int NULL = 16;
-    int NUM = 17;
-    int PRINTLN = 18;
-    int PUBLIC = 19;
-    int RETURN = 20;
-    int STATIC = 21;
-    int STRING = 22;
-    int THIS = 23;
-    int TRUE = 24;
-    int VOID = 25;
-    int WHILE = 26;
-    int error = 27;
+    int NOELSE = 16;
+    int NULL = 17;
+    int NUM = 18;
+    int PRINTLN = 19;
+    int PUBLIC = 20;
+    int RETURN = 21;
+    int STATIC = 22;
+    int STRING = 23;
+    int THIS = 24;
+    int TRUE = 25;
+    int VOID = 26;
+    int WHILE = 27;
+    int error = 28;
     // '!' (code=33)
     // '(' (code=40)
     // ')' (code=41)
